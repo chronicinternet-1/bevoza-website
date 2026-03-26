@@ -249,3 +249,26 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Buy buttons */
+.buy-btn {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px 24px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.buy-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}

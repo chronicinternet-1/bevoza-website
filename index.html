@@ -32,31 +32,31 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2 class="section-title">Coming Soon</h2>
+            <h2 class="section-title">Our Products</h2>
             
             <div class="product-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="coming-soon-badge">Coming Soon</div>
                     <h3 class="product-title">Author Revenue Dashboard</h3>
-                    <p class="product-description">Track KDP sales, marketing campaigns, royalty calculations. AI prompts included.</p>
+                    <p class="product-description">Track KDP royalties, ad revenue, affiliate income, and speaking fees across all platforms. Automated P&L, tax prep, and AI-powered revenue optimization prompts included.</p>
                     <div class="product-price">$29</div>
+                    <button class="cta-button buy-btn" onclick="checkout('bev-author-dashboard')">Buy Now — $29</button>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="coming-soon-badge">Coming Soon</div>
                     <h3 class="product-title">Solopreneur Financial Command Center</h3>
-                    <p class="product-description">Multi-business P&L, cash flow forecasting, tax estimates.</p>
+                    <p class="product-description">Complete financial dashboard for solo founders. Revenue tracking, burn rate, runway calculator, cash flow forecasting, and investor-ready reports.</p>
                     <div class="product-price">$29</div>
+                    <button class="cta-button buy-btn" onclick="checkout('bev-financial-center')">Buy Now — $29</button>
                 </div>
 
                 <!-- Product 3 -->
                 <div class="product-card">
-                    <div class="coming-soon-badge">Coming Soon</div>
                     <h3 class="product-title">Content Multiplication System</h3>
-                    <p class="product-description">Turn 1 blog post into 10 social posts. AI repurposing prompts built in.</p>
+                    <p class="product-description">Turn one piece of content into 20+. Templates for repurposing blogs into social posts, newsletters, threads, and video scripts. AI prompts built in.</p>
                     <div class="product-price">$24</div>
+                    <button class="cta-button buy-btn" onclick="checkout('bev-content-system')">Buy Now — $24</button>
                 </div>
             </div>
         </div>
@@ -88,5 +88,33 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+      async function checkout(product) {
+        const btn = event.target;
+        const origText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Redirecting...';
+        try {
+          const res = await fetch(CHECKOUT_API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ product }),
+          });
+          const data = await res.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            alert('Something went wrong. Please try again.');
+            btn.disabled = false;
+            btn.textContent = origText;
+          }
+        } catch (e) {
+          alert('Connection error. Please try again.');
+          btn.disabled = false;
+          btn.textContent = origText;
+        }
+      }
+    </script>
 </body>
 </html>
