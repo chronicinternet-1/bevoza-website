@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solopreneur Financial Command Center — Know Your Numbers, Own Your Business | Bevoza</title>
+    <meta name="description" content="The complete financial dashboard for solo founders and freelancers. P&L, burn rate, 90-day cash flow, runway calculator, and tax tracker — all in one Google Sheets template. $29 one-time.">
+    <link rel="canonical" href="https://bevoza.com/solopreneur-financial-command-center">
+    <meta property="og:title" content="Solopreneur Financial Command Center — Know Your Numbers, Own Your Business">
+    <meta property="og:description" content="The complete financial OS for one-person businesses. No bookkeeper needed. $29 one-time.">
+    <meta property="og:url" content="https://bevoza.com/solopreneur-financial-command-center">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://bevoza.com/og-financial-center.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+    <style>
+        .product-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 60px;
+            background: radial-gradient(ellipse at top, #1a2e1a 0%, #0a0a0a 60%);
+        }
+        .product-hero .hero-badge {
+            display: inline-block;
+            background: rgba(16,185,129,0.15);
+            border: 1px solid rgba(16,185,129,0.4);
+            color: #34d399;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #a3a3a3;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-price { font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 8px; }
+        .hero-price-note { font-size: 0.9rem; color: #6b7280; margin-bottom: 32px; }
+        .hero-btn {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 18px 56px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(16,185,129,0.35);
+        }
+        .hero-btn:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(16,185,129,0.45); }
+        .hero-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+        .social-proof-bar {
+            background: #141414;
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .social-proof-bar span { color: #10b981; font-weight: 600; }
+        .pain-section { padding: 80px 0; background: #0a0a0a; }
+        .pain-section .section-label { text-align: center; color: #ef4444; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .pain-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+        .pain-card { background: #141414; border: 1px solid #262626; border-left: 3px solid #ef4444; border-radius: 10px; padding: 28px; }
+        .pain-card .pain-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+        .pain-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .pain-card p { color: #a3a3a3; font-size: 0.95rem; line-height: 1.6; }
+        .preview-section { padding: 80px 0; background: #0d1117; }
+        .preview-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 16px; }
+        .preview-section .preview-subtitle { text-align: center; color: #a3a3a3; margin-bottom: 48px; font-size: 1.05rem; }
+        .spreadsheet-wrapper { overflow-x: auto; border: 1px solid #262626; border-radius: 12px; background: #1a1a2e; padding: 0; margin-bottom: 32px; }
+        .sheet-tabs { display: flex; gap: 0; border-bottom: 1px solid #262626; background: #111827; border-radius: 12px 12px 0 0; overflow-x: auto; }
+        .sheet-tab { padding: 10px 20px; font-size: 0.8rem; color: #6b7280; border-right: 1px solid #262626; cursor: pointer; white-space: nowrap; }
+        .sheet-tab.active { background: #0d2818; color: #34d399; font-weight: 600; }
+        .spreadsheet { width: 100%; border-collapse: collapse; font-size: 0.82rem; font-family: 'Inter', monospace; }
+        .spreadsheet .sh { background: #0d2818; color: #6ee7b7; font-weight: 700; padding: 10px 14px; text-align: left; border: 1px solid #1a4a2e; white-space: nowrap; }
+        .spreadsheet .sr { background: #0f172a; color: #e2e8f0; padding: 8px 14px; border: 1px solid #1e293b; white-space: nowrap; }
+        .spreadsheet .sr:hover { background: #1e293b; }
+        .spreadsheet .pos { color: #10b981; font-weight: 600; }
+        .spreadsheet .neg { color: #ef4444; }
+        .spreadsheet .warn { color: #f59e0b; }
+        .spreadsheet .muted { color: #6b7280; font-size: 0.78rem; }
+        .spreadsheet .highlight { background: #0d2818 !important; color: #34d399; font-weight: 700; }
+        .spreadsheet .row-num { background: #111827; color: #374151; padding: 8px 10px; border: 1px solid #1e293b; text-align: center; font-size: 0.75rem; min-width: 32px; }
+        .features-section { padding: 80px 0; background: #141414; }
+        .features-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 16px; }
+        .features-section .features-sub { text-align: center; color: #a3a3a3; margin-bottom: 56px; font-size: 1.05rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .feature-item { display: flex; gap: 16px; align-items: flex-start; }
+        .feature-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 2px; }
+        .feature-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+        .feature-text p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.6; }
+        .for-section { padding: 80px 0; background: #0a0a0a; }
+        .for-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto; }
+        .for-card { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 32px; text-align: center; }
+        .for-card .for-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+        .for-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
+        .for-card p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.65; }
+        .deliverables-section { padding: 80px 0; background: #141414; }
+        .deliverables-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .deliverables-list { max-width: 640px; margin: 0 auto; list-style: none; }
+        .deliverables-list li { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #262626; }
+        .deliverables-list li:last-child { border-bottom: none; }
+        .del-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .del-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .del-text p { color: #a3a3a3; font-size: 0.875rem; }
+        .pricing-section { padding: 80px 0; background: #0a0a0a; text-align: center; }
+        .pricing-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .pricing-card { max-width: 480px; margin: 0 auto; background: #141414; border: 1px solid #10b981; border-radius: 16px; padding: 48px 40px; box-shadow: 0 0 60px rgba(16,185,129,0.12); }
+        .price-was { color: #6b7280; font-size: 1.1rem; text-decoration: line-through; margin-bottom: 4px; }
+        .price-now { font-size: 4rem; font-weight: 800; color: #10b981; line-height: 1; margin-bottom: 8px; }
+        .price-period { color: #a3a3a3; font-size: 0.95rem; margin-bottom: 32px; }
+        .pricing-includes { text-align: left; margin-bottom: 36px; list-style: none; }
+        .pricing-includes li { padding: 8px 0; color: #d1d5db; font-size: 0.95rem; display: flex; gap: 10px; align-items: center; }
+        .pricing-includes li::before { content: "✓"; color: #10b981; font-weight: 700; flex-shrink: 0; }
+        .value-anchor { font-size: 0.875rem; color: #6b7280; margin-top: 20px; }
+        .faq-section { padding: 80px 0; background: #141414; }
+        .faq-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border: 1px solid #262626; border-radius: 10px; padding: 24px 28px; margin-bottom: 16px; background: #0a0a0a; }
+        .faq-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: #f3f4f6; }
+        .faq-item p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.7; }
+        .final-cta { padding: 100px 0; background: radial-gradient(ellipse at bottom, #0d2818 0%, #0a0a0a 60%); text-align: center; }
+        .final-cta h2 { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; margin-bottom: 20px; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .final-cta p { color: #a3a3a3; font-size: 1.1rem; margin-bottom: 40px; }
+        .guarantee-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10b981; padding: 10px 20px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-top: 24px; margin-right: 12px; }
+        .stripe-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); color: #a5b4fc; padding: 10px 20px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-top: 24px; }
+        @media (max-width: 768px) { .pricing-card { padding: 36px 24px; } .price-now { font-size: 3rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <div style="padding: 16px 0; border-bottom: 1px solid #262626; background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Bevoza</a>
+            <button class="hero-btn" onclick="checkout('bev-financial-center')" style="padding: 10px 28px; font-size: 0.95rem;">Buy Now — $29</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">💼 For Solo Founders & Freelancers</div>
+            <h1>You Don't Have a Bookkeeper. Your Finances Shouldn't Look Like It.</h1>
+            <p class="subtitle">The Solopreneur Financial Command Center gives you a complete financial OS — P&L, burn rate, 90-day cash flow, runway calculator, tax withholding tracker, and investor-ready snapshot — in one Google Sheets template.</p>
+            <div class="hero-price">$29 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-financial-center')">Get Instant Access — $29</button>
+            <p style="color: #4b5563; font-size: 0.85rem; margin-top: 16px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <span>100+</span> solopreneurs already know their numbers &nbsp;·&nbsp; ⭐⭐⭐⭐⭐ &nbsp;·&nbsp; <span>30-day</span> money-back guarantee
+    </div>
+
+    <!-- Pain Points -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-label">Sound Familiar?</div>
+            <h2>Flying Solo Is Liberating. Not Knowing Your Numbers Is Terrifying.</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">😱</span>
+                    <h3>Tax season = panic season</h3>
+                    <p>You spend March scrambling to reconstruct 12 months of income from bank statements, PayPal exports, and Venmo screenshots. It costs you 3 days and at least $300 in stress-induced accountant calls.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🤔</span>
+                    <h3>"How long can I actually keep going?"</h3>
+                    <p>You don't really know your runway. If two clients dropped tomorrow, you have some rough idea — but not a real number. That uncertainty keeps you from making bold moves.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">💸</span>
+                    <h3>Subscriptions bleeding you quietly</h3>
+                    <p>Figma, Notion, Zapier, hosting, 3 SaaS tools you forgot to cancel — your monthly burn is higher than you think. Most solopreneurs underestimate by 20–35%.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📊</span>
+                    <h3>No investor-ready numbers when it matters</h3>
+                    <p>When a grant committee or accelerator asks for a P&L, you stall. Or send a messy Google Sheet and hope they don't look too hard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spreadsheet Preview -->
+    <section class="preview-section">
+        <div class="container">
+            <h2>Your Financial Dashboard, Ready on Day 1</h2>
+            <p class="preview-subtitle">Sample data shown. Replace with your numbers in under an hour.</p>
+            <div class="spreadsheet-wrapper">
+                <div class="sheet-tabs">
+                    <div class="sheet-tab active">💰 P&L Dashboard</div>
+                    <div class="sheet-tab">🔥 Burn Rate</div>
+                    <div class="sheet-tab">📅 Cash Flow (90-Day)</div>
+                    <div class="sheet-tab">⏳ Runway Calculator</div>
+                    <div class="sheet-tab">🧾 Invoice Tracker</div>
+                    <div class="sheet-tab">🤖 AI Prompts</div>
+                </div>
+                <table class="spreadsheet">
+                    <thead>
+                        <tr>
+                            <td class="row-num"></td>
+                            <td class="sh" style="min-width:220px;">Category</td>
+                            <td class="sh">Jan</td>
+                            <td class="sh">Feb</td>
+                            <td class="sh">Mar</td>
+                            <td class="sh">Apr</td>
+                            <td class="sh">May</td>
+                            <td class="sh">Jun</td>
+                            <td class="sh">H1 Total</td>
+                            <td class="sh">% Budget</td>
+                            <td class="sh">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="row-num">2</td><td class="sr" style="color:#6ee7b7; font-weight:700; padding-top:14px;">REVENUE</td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td></tr>
+                        <tr>
+                            <td class="row-num">3</td><td class="sr">Client A — Retainer</td>
+                            <td class="sr pos">$3,500</td><td class="sr pos">$3,500</td><td class="sr pos">$3,500</td><td class="sr pos">$3,500</td><td class="sr pos">$3,500</td><td class="sr pos">$3,500</td>
+                            <td class="sr highlight">$21,000</td><td class="sr pos">42.0%</td><td class="sr pos">Active ✓</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">4</td><td class="sr">Client B — Project</td>
+                            <td class="sr pos">$0</td><td class="sr pos">$4,200</td><td class="sr pos">$2,100</td><td class="sr pos">$0</td><td class="sr pos">$5,800</td><td class="sr pos">$2,900</td>
+                            <td class="sr highlight">$15,000</td><td class="sr pos">30.0%</td><td class="sr warn">Pending ⏳</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">5</td><td class="sr">Client C — Consulting</td>
+                            <td class="sr pos">$1,800</td><td class="sr pos">$0</td><td class="sr pos">$1,800</td><td class="sr pos">$1,800</td><td class="sr pos">$0</td><td class="sr pos">$1,800</td>
+                            <td class="sr highlight">$7,200</td><td class="sr pos">14.4%</td><td class="sr pos">Active ✓</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">6</td><td class="sr">Digital Products</td>
+                            <td class="sr pos">$312</td><td class="sr pos">$489</td><td class="sr pos">$567</td><td class="sr pos">$701</td><td class="sr pos">$823</td><td class="sr pos">$942</td>
+                            <td class="sr highlight">$3,834</td><td class="sr pos">7.7%</td><td class="sr pos">Growing 📈</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">7</td><td class="sr">Other / Misc</td>
+                            <td class="sr pos">$500</td><td class="sr pos">$0</td><td class="sr pos">$750</td><td class="sr pos">$0</td><td class="sr pos">$0</td><td class="sr pos">$750</td>
+                            <td class="sr highlight">$2,000</td><td class="sr pos">4.0%</td><td class="sr muted">Variable</td>
+                        </tr>
+                        <tr style="font-weight:700;">
+                            <td class="row-num">8</td><td class="sr" style="color:#6ee7b7; font-weight:700;">Total Revenue</td>
+                            <td class="sr highlight">$6,112</td><td class="sr highlight">$8,189</td><td class="sr highlight">$8,717</td><td class="sr highlight">$6,001</td><td class="sr highlight">$10,123</td><td class="sr highlight">$9,892</td>
+                            <td class="sr highlight" style="color:#10b981;">$49,034</td><td class="sr">100%</td><td class="sr"></td>
+                        </tr>
+                        <tr><td class="row-num">9</td><td class="sr" style="color:#fca5a5; font-weight:700; padding-top:14px;">EXPENSES</td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td><td class="sr"></td></tr>
+                        <tr>
+                            <td class="row-num">10</td><td class="sr">SaaS / Subscriptions</td>
+                            <td class="sr neg">-$487</td><td class="sr neg">-$487</td><td class="sr neg">-$512</td><td class="sr neg">-$512</td><td class="sr neg">-$512</td><td class="sr neg">-$538</td>
+                            <td class="sr neg">-$3,048</td><td class="sr neg">28.1%</td><td class="sr warn">Review ⚠️</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">11</td><td class="sr">Advertising / Paid Ads</td>
+                            <td class="sr neg">-$200</td><td class="sr neg">-$350</td><td class="sr neg">-$200</td><td class="sr neg">-$400</td><td class="sr neg">-$350</td><td class="sr neg">-$400</td>
+                            <td class="sr neg">-$1,900</td><td class="sr neg">17.5%</td><td class="sr muted">Tracked</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">12</td><td class="sr">Contractors / Freelancers</td>
+                            <td class="sr neg">-$0</td><td class="sr neg">-$800</td><td class="sr neg">-$0</td><td class="sr neg">-$1,200</td><td class="sr neg">-$800</td><td class="sr neg">-$0</td>
+                            <td class="sr neg">-$2,800</td><td class="sr neg">25.8%</td><td class="sr muted">Variable</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">13</td><td class="sr">Other Business Expenses</td>
+                            <td class="sr neg">-$148</td><td class="sr neg">-$92</td><td class="sr neg">-$215</td><td class="sr neg">-$168</td><td class="sr neg">-$134</td><td class="sr neg">-$201</td>
+                            <td class="sr neg">-$958</td><td class="sr neg">8.8%</td><td class="sr muted">Normal</td>
+                        </tr>
+                        <tr style="font-weight:700;">
+                            <td class="row-num">14</td><td class="sr" style="color:#fca5a5; font-weight:700;">Total Expenses</td>
+                            <td class="sr neg">-$835</td><td class="sr neg">-$1,729</td><td class="sr neg">-$927</td><td class="sr neg">-$2,280</td><td class="sr neg">-$1,796</td><td class="sr neg">-$1,139</td>
+                            <td class="sr neg">-$8,706</td><td class="sr neg">100%</td><td class="sr"></td>
+                        </tr>
+                        <tr style="font-weight:700;">
+                            <td class="row-num">15</td><td class="sr" style="color:#fbbf24;">Est. Tax Withheld (27%)</td>
+                            <td class="sr warn">-$1,430</td><td class="sr warn">-$1,752</td><td class="sr warn">-$2,105</td><td class="sr warn">-$1,007</td><td class="sr warn">-$2,252</td><td class="sr warn">-$2,355</td>
+                            <td class="sr warn">-$10,901</td><td class="sr"></td><td class="sr muted">Auto-calc</td>
+                        </tr>
+                        <tr style="font-weight:700;">
+                            <td class="row-num">16</td><td class="sr" style="color:#10b981; font-weight:800;">NET TAKE-HOME</td>
+                            <td class="sr highlight" style="color:#10b981;">$3,847</td><td class="sr highlight" style="color:#10b981;">$4,708</td><td class="sr highlight" style="color:#10b981;">$5,685</td><td class="sr highlight" style="color:#10b981;">$2,714</td><td class="sr highlight" style="color:#10b981;">$6,075</td><td class="sr highlight" style="color:#10b981;">$6,398</td>
+                            <td class="sr highlight" style="color:#10b981; font-size:0.9rem;">$29,427</td><td class="sr"></td><td class="sr pos">+18.2%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Runway mini preview -->
+            <div style="background:#141414; border:1px solid #262626; border-radius:12px; padding:28px; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto;">
+                <div style="font-size:0.8rem; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:16px;">⏳ RUNWAY CALCULATOR</div>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center;">
+                    <div>
+                        <div style="font-size:0.8rem; color:#6b7280; margin-bottom:4px;">Cash on Hand</div>
+                        <div style="font-size:1.75rem; font-weight:800; color:#10b981;">$18,400</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.8rem; color:#6b7280; margin-bottom:4px;">Monthly Burn Rate</div>
+                        <div style="font-size:1.75rem; font-weight:800; color:#f59e0b;">$1,451</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.8rem; color:#6b7280; margin-bottom:4px;">Runway</div>
+                        <div style="font-size:1.75rem; font-weight:800; color:#60a5fa;">12.7 mo</div>
+                    </div>
+                </div>
+                <div style="margin-top:16px; background:#0f172a; border-radius:8px; height:12px; overflow:hidden;">
+                    <div style="width:72%; height:100%; background:linear-gradient(90deg, #10b981, #34d399); border-radius:8px;"></div>
+                </div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:6px; text-align:center;">Safe zone: 12+ months runway &nbsp;·&nbsp; Update monthly</div>
+            </div>
+            <p style="text-align:center; color:#6b7280; font-size:0.85rem; margin-top:20px;">↑ Sample data shown. Your numbers auto-populate from monthly input tabs.</p>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What's Inside the Command Center</h2>
+            <p class="features-sub">12 tabs. Built for solo founders who wear every hat.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <div class="feature-text"><h4>P&L Dashboard</h4><p>Auto-calculated profit and loss by month and quarter. Revenue minus expenses minus taxes = your real take-home.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔥</span>
+                    <div class="feature-text"><h4>Burn Rate Calculator</h4><p>Fixed vs. variable costs broken out. See exactly how much you spend every month — and what to cut first.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📅</span>
+                    <div class="feature-text"><h4>90-Day Cash Flow Projection</h4><p>Forward-looking cash flow based on confirmed contracts, expected invoices, and recurring expenses. Know what's coming before it arrives.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⏳</span>
+                    <div class="feature-text"><h4>Runway Calculator</h4><p>Cash on hand ÷ monthly burn = months of runway. Updated automatically. Color-coded: green (safe), yellow (watch), red (act now).</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🧾</span>
+                    <div class="feature-text"><h4>Invoice Tracker</h4><p>Outstanding invoices, due dates, payment status, aging report. Never lose track of what you're owed again.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💳</span>
+                    <div class="feature-text"><h4>Subscription Audit</h4><p>Every recurring charge in one place. Monthly, annual, and total cost view. Most solopreneurs find $200+/month to cancel immediately.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🏦</span>
+                    <div class="feature-text"><h4>Tax Withholding Tracker</h4><p>Quarterly estimated tax calculator. Know how much to set aside from every payment so you're never blindsided in April.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📈</span>
+                    <div class="feature-text"><h4>Investor-Ready Financial Snapshot</h4><p>One-page summary of your MRR, ARR, growth rate, margins, and runway. Ready to share with accelerators, grants, or investors.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">👥</span>
+                    <div class="feature-text"><h4>Client Revenue Breakdown</h4><p>Revenue by client with concentration risk flag. If one client is >40% of revenue, the dashboard warns you.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-text"><h4>AI Prompt Library (18 Prompts)</h4><p>ChatGPT prompts for financial planning, pricing decisions, client negotiation, tax Q&A, and cash flow analysis.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="for-section">
+        <div class="container">
+            <h2>Built For You If...</h2>
+            <div class="for-grid">
+                <div class="for-card">
+                    <span class="for-emoji">🧑‍💻</span>
+                    <h3>The Solo Founder</h3>
+                    <p>You're building something real, but your finances live in your head. You need a single source of truth before you make any big bets — hiring, raising, pivoting.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🎯</span>
+                    <h3>The Freelancer Going Full-Time</h3>
+                    <p>You left your job or you're about to. The runway question keeps you up at night. This gives you a real answer — and a plan to extend it.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🏗️</span>
+                    <h3>The One-Person Agency</h3>
+                    <p>Multiple clients, variable income, growing expenses. You need a system that scales with you — not something you have to rebuild every time you land a new client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2>Everything You Get for $29</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <span class="del-icon">💼</span>
+                    <div class="del-text">
+                        <h4>Solopreneur Financial Command Center (Google Sheets)</h4>
+                        <p>12-tab template, pre-built formulas, realistic sample data. Works in Google Sheets (free) and exports to Excel.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🤖</span>
+                    <div class="del-text">
+                        <h4>AI Financial Decision Prompt Library (PDF)</h4>
+                        <p>18 ChatGPT prompts for pricing, cash flow analysis, client negotiation, tax prep, and business planning.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📖</span>
+                    <div class="del-text">
+                        <h4>Quick-Start Setup Guide</h4>
+                        <p>Populate the entire dashboard in under an hour with this step-by-step walkthrough.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🎥</span>
+                    <div class="del-text">
+                        <h4>Video Walkthrough</h4>
+                        <p>25-minute walkthrough of every tab, formula, and use case — including the runway calculator and cash flow projection.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Free Lifetime Updates</h4>
+                        <p>We improve the template as we learn from customers. New tabs, better formulas, updated prompts — yours at no charge.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Less Than One Hour of Bookkeeper Time.</h2>
+            <div class="pricing-card">
+                <div class="price-was">Bookkeeper cost: $75–$150/hour</div>
+                <div class="price-now">$29</div>
+                <div class="price-period">one-time payment · instant delivery</div>
+                <ul class="pricing-includes">
+                    <li>Financial Command Center (Google Sheets, 12 tabs)</li>
+                    <li>AI Financial Decision Prompt Library (18 prompts)</li>
+                    <li>Quick-Start Setup Guide</li>
+                    <li>Video Walkthrough (25 min)</li>
+                    <li>Free lifetime updates</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <button class="hero-btn" onclick="checkout('bev-financial-center')" style="width:100%;">Get Instant Access — $29</button>
+                <div class="value-anchor">💡 Average solopreneur using this template finds $200+/month in uncategorized or unnecessary expenses in the first week.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>What format is the template?</h4>
+                    <p>Google Sheets. After purchase, you receive a link to copy the file to your own Google Drive in one click. It also exports to Excel (.xlsx) if needed.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>I'm not a numbers person. Can I still use this?</h4>
+                    <p>Yes. You enter your numbers, the formulas do everything else. The setup guide is written for non-accountants. If you can enter a dollar amount into a cell, you can use this template.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Does this replace accounting software like QuickBooks?</h4>
+                    <p>Not if you have employees or complex inventory. But for most solopreneurs and freelancers, this template handles 90% of what you actually need — without the $30–$100/month subscription.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the refund policy?</h4>
+                    <p>30 days, no questions asked. Email steve@bevoza.com and you'll get a full refund. We want you to love it, not feel stuck with it.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I use this if I have an LLC or S-Corp?</h4>
+                    <p>Yes. The template is business-structure agnostic. You can adjust the tax rate calculation to match your entity type. We recommend confirming tax specifics with a CPA.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I share this with my accountant?</h4>
+                    <p>Absolutely. Google Sheets has built-in sharing. Share with view or edit access. Your accountant will appreciate seeing everything organized in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Know Your Numbers. Make Bolder Decisions.</h2>
+            <p>Stop flying blind. Get a complete financial picture of your solo business — in one afternoon.</p>
+            <button class="hero-btn" onclick="checkout('bev-financial-center')">Get the Financial Command Center — $29</button>
+            <br>
+            <span class="guarantee-badge">✅ 30-Day Money-Back Guarantee</span>
+            <span class="stripe-badge">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/" style="color:#6b7280; text-decoration:none;">← Back to Bevoza</a> &nbsp;·&nbsp; &copy; 2026 Bevoza &middot; Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product) {
+            const btn = event.target;
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            try {
+                const res = await fetch(CHECKOUT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = origText;
+                }
+            } catch (e) {
+                alert('Connection error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        }
+    </script>
+</body>
+</html>

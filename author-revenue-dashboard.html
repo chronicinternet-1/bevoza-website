@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Revenue Dashboard — Track Every Dollar Across 7 Income Streams | Bevoza</title>
+    <meta name="description" content="Stop losing money in spreadsheet chaos. The Author Revenue Dashboard consolidates KDP royalties, ad revenue, affiliate income, speaking fees, and more into one AI-powered command center. $29 one-time.">
+    <link rel="canonical" href="https://bevoza.com/author-revenue-dashboard">
+    <meta property="og:title" content="Author Revenue Dashboard — Track Every Dollar Across 7 Income Streams">
+    <meta property="og:description" content="Stop losing money in spreadsheet chaos. One Google Sheets template to rule your author business finances. $29.">
+    <meta property="og:url" content="https://bevoza.com/author-revenue-dashboard">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://bevoza.com/og-author-dashboard.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+    <style>
+        /* Product page specific styles */
+        .product-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 60px;
+            background: radial-gradient(ellipse at top, #1a2744 0%, #0a0a0a 60%);
+        }
+        .product-hero .hero-badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.4);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #a3a3a3;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        .hero-price-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 18px 56px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+        }
+        .hero-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.45);
+        }
+        .hero-btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+        .social-proof-bar {
+            background: #141414;
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .social-proof-bar span {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Pain Points */
+        .pain-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .pain-section .section-label {
+            text-align: center;
+            color: #ef4444;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .pain-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pain-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-left: 3px solid #ef4444;
+            border-radius: 10px;
+            padding: 28px;
+        }
+        .pain-card .pain-icon {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .pain-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pain-card p {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Spreadsheet Preview */
+        .preview-section {
+            padding: 80px 0;
+            background: #0d1117;
+        }
+        .preview-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .preview-section .preview-subtitle {
+            text-align: center;
+            color: #a3a3a3;
+            margin-bottom: 48px;
+            font-size: 1.05rem;
+        }
+        .spreadsheet-wrapper {
+            overflow-x: auto;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            background: #1a1a2e;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        .sheet-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid #262626;
+            background: #111827;
+            border-radius: 12px 12px 0 0;
+            overflow-x: auto;
+        }
+        .sheet-tab {
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+            border-right: 1px solid #262626;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .sheet-tab.active {
+            background: #1e3a5f;
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        .spreadsheet {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            font-family: 'Inter', monospace;
+        }
+        .spreadsheet .sh {
+            background: #1e3a5f;
+            color: #93c5fd;
+            font-weight: 700;
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #263d5a;
+            white-space: nowrap;
+        }
+        .spreadsheet .sr {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 8px 14px;
+            border: 1px solid #1e293b;
+            white-space: nowrap;
+        }
+        .spreadsheet .sr:hover {
+            background: #1e293b;
+        }
+        .spreadsheet .pos { color: #10b981; font-weight: 600; }
+        .spreadsheet .neg { color: #ef4444; }
+        .spreadsheet .muted { color: #6b7280; font-size: 0.78rem; }
+        .spreadsheet .highlight { background: #1e3a5f !important; color: #60a5fa; font-weight: 700; }
+        .spreadsheet .row-num {
+            background: #111827;
+            color: #374151;
+            padding: 8px 10px;
+            border: 1px solid #1e293b;
+            text-align: center;
+            font-size: 0.75rem;
+            min-width: 32px;
+        }
+
+        /* Features */
+        .features-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .features-section .features-sub {
+            text-align: center;
+            color: #a3a3a3;
+            margin-bottom: 56px;
+            font-size: 1.05rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .feature-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .feature-text p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Who It's For */
+        .for-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .for-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .for-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+        .for-card .for-emoji {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .for-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .for-card p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* What You Get */
+        .deliverables-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .deliverables-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .deliverables-list {
+            max-width: 640px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .deliverables-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #262626;
+        }
+        .deliverables-list li:last-child { border-bottom: none; }
+        .del-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .del-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .del-text p { color: #a3a3a3; font-size: 0.875rem; }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .pricing-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #141414;
+            border: 1px solid #3b82f6;
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 0 60px rgba(59,130,246,0.12);
+        }
+        .price-was {
+            color: #6b7280;
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        .price-now {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #3b82f6;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .price-period {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        .pricing-includes {
+            text-align: left;
+            margin-bottom: 36px;
+            list-style: none;
+        }
+        .pricing-includes li {
+            padding: 8px 0;
+            color: #d1d5db;
+            font-size: 0.95rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .pricing-includes li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .value-anchor {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 20px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid #262626;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            background: #0a0a0a;
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #f3f4f6;
+        }
+        .faq-item p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: radial-gradient(ellipse at bottom, #1a2744 0%, #0a0a0a 60%);
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-cta p {
+            color: #a3a3a3;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.3);
+            color: #10b981;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-right: 12px;
+        }
+        .stripe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.3);
+            color: #a5b4fc;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        .back-link {
+            display: inline-block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: #a3a3a3; }
+
+        @media (max-width: 768px) {
+            .pricing-card { padding: 36px 24px; }
+            .price-now { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <div style="padding: 16px 0; border-bottom: 1px solid #262626; background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Bevoza</a>
+            <button class="hero-btn" onclick="checkout('bev-author-dashboard')" style="padding: 10px 28px; font-size: 0.95rem;">Buy Now — $29</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">📚 For Authors & Content Creators</div>
+            <h1>Your Author Income Is Scattered Across 7 Platforms. That Ends Today.</h1>
+            <p class="subtitle">The Author Revenue Dashboard consolidates every royalty, ad dollar, affiliate payment, and speaking fee into one AI-powered Google Sheets template — with built-in tax estimates and a 12-month trend view.</p>
+            <div class="hero-price">$29 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-author-dashboard')">Get Instant Access — $29</button>
+            <p style="color: #4b5563; font-size: 0.85rem; margin-top: 16px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <span>100+</span> authors and creators are already tracking their income here &nbsp;·&nbsp; ⭐⭐⭐⭐⭐ &nbsp;·&nbsp; <span>30-day</span> money-back guarantee
+    </div>
+
+    <!-- Pain Points -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-label">Sound Familiar?</div>
+            <h2>You're Earning From Multiple Streams — But Flying Blind</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">😤</span>
+                    <h3>KDP in one tab, AdSense in another, affiliate dashboard in a third...</h3>
+                    <p>You spend more time hunting down numbers than actually understanding them. By the time you've assembled everything, the month is over.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">😰</span>
+                    <h3>Tax season is a nightmare every year</h3>
+                    <p>You hand your accountant a mess of screenshots and bank statements. Last year it cost you $400 in prep fees — and that was before you paid the actual tax.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🤷</span>
+                    <h3>"Which income stream is actually growing?" — No idea.</h3>
+                    <p>You're guessing which platform to double down on. Without a trend view, every decision is a coin flip.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📉</span>
+                    <h3>You're probably leaving $300–$500/month unclaimed</h3>
+                    <p>Untracked affiliate links, forgotten bonus tiers, missed payment thresholds. It happens when you don't have a system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spreadsheet Preview -->
+    <section class="preview-section">
+        <div class="container">
+            <h2>See Inside the Dashboard</h2>
+            <p class="preview-subtitle">Real sample data. What you'll see on Day 1 — just with your numbers.</p>
+
+            <div class="spreadsheet-wrapper">
+                <div class="sheet-tabs">
+                    <div class="sheet-tab active">📊 Revenue Summary</div>
+                    <div class="sheet-tab">📅 Monthly P&L</div>
+                    <div class="sheet-tab">🏦 Tax Estimator</div>
+                    <div class="sheet-tab">📈 12-Month Trend</div>
+                    <div class="sheet-tab">🤖 AI Prompts</div>
+                </div>
+                <table class="spreadsheet">
+                    <thead>
+                        <tr>
+                            <td class="row-num"></td>
+                            <td class="sh" style="min-width:180px;">Revenue Stream</td>
+                            <td class="sh">Jan</td>
+                            <td class="sh">Feb</td>
+                            <td class="sh">Mar</td>
+                            <td class="sh">Apr</td>
+                            <td class="sh">May</td>
+                            <td class="sh">Jun</td>
+                            <td class="sh">Q2 Total</td>
+                            <td class="sh">YTD Total</td>
+                            <td class="sh">% of Revenue</td>
+                            <td class="sh">MoM Change</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-num">2</td>
+                            <td class="sr">KDP Royalties (US)</td>
+                            <td class="sr pos">$1,240</td>
+                            <td class="sr pos">$1,380</td>
+                            <td class="sr pos">$1,520</td>
+                            <td class="sr pos">$1,490</td>
+                            <td class="sr pos">$1,710</td>
+                            <td class="sr pos">$1,850</td>
+                            <td class="sr highlight">$5,050</td>
+                            <td class="sr highlight">$9,190</td>
+                            <td class="sr pos">38.2%</td>
+                            <td class="sr pos">+8.2%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">3</td>
+                            <td class="sr">KDP Royalties (Intl)</td>
+                            <td class="sr pos">$312</td>
+                            <td class="sr pos">$298</td>
+                            <td class="sr pos">$341</td>
+                            <td class="sr pos">$405</td>
+                            <td class="sr pos">$389</td>
+                            <td class="sr pos">$421</td>
+                            <td class="sr highlight">$1,215</td>
+                            <td class="sr highlight">$2,166</td>
+                            <td class="sr pos">9.0%</td>
+                            <td class="sr pos">+8.2%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">4</td>
+                            <td class="sr">Amazon Associates</td>
+                            <td class="sr pos">$487</td>
+                            <td class="sr pos">$523</td>
+                            <td class="sr pos">$511</td>
+                            <td class="sr pos">$602</td>
+                            <td class="sr pos">$589</td>
+                            <td class="sr pos">$644</td>
+                            <td class="sr highlight">$1,835</td>
+                            <td class="sr highlight">$3,356</td>
+                            <td class="sr pos">13.9%</td>
+                            <td class="sr pos">+9.3%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">5</td>
+                            <td class="sr">Google AdSense</td>
+                            <td class="sr pos">$218</td>
+                            <td class="sr pos">$241</td>
+                            <td class="sr pos">$229</td>
+                            <td class="sr pos">$267</td>
+                            <td class="sr pos">$312</td>
+                            <td class="sr pos">$298</td>
+                            <td class="sr highlight">$877</td>
+                            <td class="sr highlight">$1,565</td>
+                            <td class="sr pos">6.5%</td>
+                            <td class="sr neg">-4.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">6</td>
+                            <td class="sr">Course Sales (Teachable)</td>
+                            <td class="sr pos">$890</td>
+                            <td class="sr pos">$720</td>
+                            <td class="sr pos">$1,140</td>
+                            <td class="sr pos">$980</td>
+                            <td class="sr pos">$1,260</td>
+                            <td class="sr pos">$1,450</td>
+                            <td class="sr highlight">$3,690</td>
+                            <td class="sr highlight">$6,440</td>
+                            <td class="sr pos">26.7%</td>
+                            <td class="sr pos">+15.1%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">7</td>
+                            <td class="sr">Speaking Fees</td>
+                            <td class="sr pos">$0</td>
+                            <td class="sr pos">$1,500</td>
+                            <td class="sr pos">$0</td>
+                            <td class="sr pos">$2,000</td>
+                            <td class="sr pos">$0</td>
+                            <td class="sr pos">$1,500</td>
+                            <td class="sr highlight">$3,500</td>
+                            <td class="sr highlight">$5,000</td>
+                            <td class="sr pos">20.7%</td>
+                            <td class="sr muted">—</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">8</td>
+                            <td class="sr">Freelance Writing</td>
+                            <td class="sr pos">$350</td>
+                            <td class="sr pos">$350</td>
+                            <td class="sr pos">$700</td>
+                            <td class="sr pos">$350</td>
+                            <td class="sr pos">$700</td>
+                            <td class="sr pos">$700</td>
+                            <td class="sr highlight">$1,750</td>
+                            <td class="sr highlight">$3,150</td>
+                            <td class="sr pos">13.1%</td>
+                            <td class="sr muted">Stable</td>
+                        </tr>
+                        <tr style="font-weight: 700;">
+                            <td class="row-num">9</td>
+                            <td class="sr" style="color:#60a5fa; font-weight:700;">TOTAL REVENUE</td>
+                            <td class="sr highlight">$3,497</td>
+                            <td class="sr highlight">$5,012</td>
+                            <td class="sr highlight">$4,441</td>
+                            <td class="sr highlight">$6,094</td>
+                            <td class="sr highlight">$4,960</td>
+                            <td class="sr highlight">$6,863</td>
+                            <td class="sr highlight" style="color:#10b981;">$17,917</td>
+                            <td class="sr highlight" style="color:#10b981;">$30,867</td>
+                            <td class="sr">100%</td>
+                            <td class="sr pos">+38.4%</td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">10</td>
+                            <td class="sr muted">— Expenses (tools, ads, software)</td>
+                            <td class="sr neg">-$312</td>
+                            <td class="sr neg">-$298</td>
+                            <td class="sr neg">-$341</td>
+                            <td class="sr neg">-$287</td>
+                            <td class="sr neg">-$356</td>
+                            <td class="sr neg">-$389</td>
+                            <td class="sr neg">-$1,032</td>
+                            <td class="sr neg">-$1,983</td>
+                            <td class="sr muted"></td>
+                            <td class="sr muted"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-num">11</td>
+                            <td class="sr muted">— Est. Tax (25% SE rate)</td>
+                            <td class="sr neg">-$796</td>
+                            <td class="sr neg">-$1,178</td>
+                            <td class="sr neg">-$1,025</td>
+                            <td class="sr neg">-$1,452</td>
+                            <td class="sr neg">-$1,151</td>
+                            <td class="sr neg">-$1,619</td>
+                            <td class="sr neg">-$4,222</td>
+                            <td class="sr neg">-$7,221</td>
+                            <td class="sr muted"></td>
+                            <td class="sr muted"></td>
+                        </tr>
+                        <tr style="font-weight:700;">
+                            <td class="row-num">12</td>
+                            <td class="sr" style="color:#10b981; font-weight:700;">NET TAKE-HOME</td>
+                            <td class="sr highlight" style="color:#10b981;">$2,389</td>
+                            <td class="sr highlight" style="color:#10b981;">$3,536</td>
+                            <td class="sr highlight" style="color:#10b981;">$3,075</td>
+                            <td class="sr highlight" style="color:#10b981;">$4,355</td>
+                            <td class="sr highlight" style="color:#10b981;">$3,453</td>
+                            <td class="sr highlight" style="color:#10b981;">$4,855</td>
+                            <td class="sr highlight" style="color:#10b981;">$12,663</td>
+                            <td class="sr highlight" style="color:#10b981;">$21,663</td>
+                            <td class="sr"></td>
+                            <td class="sr pos">+40.6%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align:center; color:#6b7280; font-size:0.85rem;">↑ Sample data shown. Your numbers populate automatically from the monthly input tabs.</p>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What's Inside the Dashboard</h2>
+            <p class="features-sub">10 tabs, zero complexity. Built so you can update it in 15 minutes a month.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">💰</span>
+                    <div class="feature-text">
+                        <h4>7-Stream Revenue Consolidator</h4>
+                        <p>KDP (US + Intl), AdSense/Mediavine, Amazon Associates, speaking fees, course sales, freelance, and a custom field — all in one view.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <div class="feature-text">
+                        <h4>Auto-Calculated Monthly P&L</h4>
+                        <p>Revenue minus expenses minus estimated taxes = real take-home pay. Updated the moment you enter a number.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🧾</span>
+                    <div class="feature-text">
+                        <h4>Quarterly Tax Estimator</h4>
+                        <p>SE tax rate auto-applied. Know your Q1–Q4 estimated tax payments before the IRS comes knocking.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📈</span>
+                    <div class="feature-text">
+                        <h4>12-Month Revenue Trend Charts</h4>
+                        <p>Visual line charts for each income stream. See what's growing, what's stalling, what needs attention.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-text">
+                        <h4>AI Prompt Library (15 Prompts)</h4>
+                        <p>Pre-written ChatGPT prompts for revenue analysis, platform strategy, pricing optimization, and more.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📋</span>
+                    <div class="feature-text">
+                        <h4>Expense Tracker by Category</h4>
+                        <p>Software, ads, design, equipment — categorized for Schedule C. Export-ready at tax time.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎯</span>
+                    <div class="feature-text">
+                        <h4>Annual Goal Tracker</h4>
+                        <p>Set yearly income targets per stream. Watch the progress bars fill as you hit milestones.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📤</span>
+                    <div class="feature-text">
+                        <h4>Export-Ready Reports</h4>
+                        <p>One-click sheet export for your accountant. Print-friendly P&L summary included.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🗓️</span>
+                    <div class="feature-text">
+                        <h4>Platform Payment Calendar</h4>
+                        <p>Track when each platform pays (KDP: end of month + 60 days, AdSense: 21st, etc.). Never miss a threshold.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔓</span>
+                    <div class="feature-text">
+                        <h4>Fully Unlocked — No Macros</h4>
+                        <p>No hidden formulas, no locked cells, no dependencies. Customize every field for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="for-section">
+        <div class="container">
+            <h2>This Was Built For You If...</h2>
+            <div class="for-grid">
+                <div class="for-card">
+                    <span class="for-emoji">✍️</span>
+                    <h3>The Self-Published Author</h3>
+                    <p>You have 2–8 books on KDP, a blog with AdSense, and an Amazon Associates link in your bio. Every platform has its own dashboard and nothing adds up cleanly. This fixes that.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🎙️</span>
+                    <h3>The Speaker + Course Creator</h3>
+                    <p>You earn from live events, a Teachable course, and a newsletter. Irregular income makes financial planning impossible. This gives you a system — even for lumpy months.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">📝</span>
+                    <h3>The Freelance Writer</h3>
+                    <p>You juggle client work, royalties, and affiliate income. You've been meaning to "get organized" for two years. This is the tool that actually makes it happen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2>Everything You Get for $29</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <span class="del-icon">📊</span>
+                    <div class="del-text">
+                        <h4>Author Revenue Dashboard (Google Sheets)</h4>
+                        <p>10-tab template, pre-built formulas, sample data included. Works in Google Sheets (free) and exports to Excel.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🤖</span>
+                    <div class="del-text">
+                        <h4>AI Prompt Library (PDF)</h4>
+                        <p>15 plug-and-play ChatGPT prompts for revenue analysis, platform decisions, pricing strategy, and tax prep Q&A.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📖</span>
+                    <div class="del-text">
+                        <h4>5-Minute Setup Guide</h4>
+                        <p>Step-by-step instructions to populate the dashboard with your data. No spreadsheet experience required.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🎥</span>
+                    <div class="del-text">
+                        <h4>Video Walkthrough</h4>
+                        <p>20-minute screen recording showing every tab, formula, and use case. Watch once, use forever.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Free Lifetime Updates</h4>
+                        <p>When platforms change their payment structures, we update the template. You get the new version at no charge.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>One-Time Investment. Lifetime Clarity.</h2>
+            <div class="pricing-card">
+                <div class="price-was">Value: $200+ in accounting/consulting time</div>
+                <div class="price-now">$29</div>
+                <div class="price-period">one-time payment · instant delivery</div>
+                <ul class="pricing-includes">
+                    <li>Author Revenue Dashboard (Google Sheets)</li>
+                    <li>AI Prompt Library — 15 prompts (PDF)</li>
+                    <li>5-Minute Setup Guide</li>
+                    <li>Video Walkthrough (20 min)</li>
+                    <li>Free lifetime updates</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <button class="hero-btn" onclick="checkout('bev-author-dashboard')" style="width:100%;">Get Instant Access — $29</button>
+                <div class="value-anchor">💡 Most authors recoup this in the first month by catching unclaimed affiliate payments alone.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>What format is the template?</h4>
+                    <p>It's a Google Sheets file. After purchase, you'll get a link to make your own copy — it's in your Google Drive in under 60 seconds. It also exports to Excel (.xlsx) if you prefer.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need accounting experience?</h4>
+                    <p>None. If you can type numbers into cells, you can use this. The formulas do all the math. The setup guide walks you through every step.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I customize it for my specific income streams?</h4>
+                    <p>Yes. Every cell is unlocked. Rename platforms, add new income categories, change tax rates — it's your template to own and modify.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the refund policy?</h4>
+                    <p>30-day no-questions-asked refund. If the template doesn't work for you, email steve@bevoza.com within 30 days and you'll get a full refund. No hoops.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will this work if I'm outside the US?</h4>
+                    <p>Yes. The tax estimator uses US SE rates by default, but you can change the percentage to match your country. Revenue tracking works globally.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How is this different from a generic budget spreadsheet?</h4>
+                    <p>This was built specifically for author and creator income — KDP payment cycles, affiliate thresholds, seasonal royalty patterns, and the specific expense categories that matter at tax time. Generic templates miss all of that.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Stop Guessing. Start Knowing Exactly What You Earn.</h2>
+            <p>One template. 15 minutes a month. Total clarity on your author income.</p>
+            <button class="hero-btn" onclick="checkout('bev-author-dashboard')">Get the Author Revenue Dashboard — $29</button>
+            <br>
+            <span class="guarantee-badge">✅ 30-Day Money-Back Guarantee</span>
+            <span class="stripe-badge">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/" style="color:#6b7280; text-decoration:none;">← Back to Bevoza</a> &nbsp;·&nbsp; &copy; 2026 Bevoza &middot; Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product) {
+            const btn = event.target;
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            try {
+                const res = await fetch(CHECKOUT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = origText;
+                }
+            } catch (e) {
+                alert('Connection error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        }
+    </script>
+</body>
+</html>

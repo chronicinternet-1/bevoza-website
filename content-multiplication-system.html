@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Multiplication System — Turn 1 Blog Post Into 20+ Pieces of Content | Bevoza</title>
+    <meta name="description" content="Stop writing everything from scratch. The Content Multiplication System repurposes one blog post into tweets, threads, LinkedIn posts, newsletters, YouTube scripts, and more — with built-in AI prompts. $24 one-time.">
+    <link rel="canonical" href="https://bevoza.com/content-multiplication-system">
+    <meta property="og:title" content="Content Multiplication System — Turn 1 Blog Post Into 20+ Pieces of Content">
+    <meta property="og:description" content="You write great blog posts. You just never repurpose them. This fixes that. $24.">
+    <meta property="og:url" content="https://bevoza.com/content-multiplication-system">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://bevoza.com/og-content-system.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+    <style>
+        .product-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 60px;
+            background: radial-gradient(ellipse at top, #2d1a44 0%, #0a0a0a 60%);
+        }
+        .product-hero .hero-badge {
+            display: inline-block;
+            background: rgba(168,85,247,0.15);
+            border: 1px solid rgba(168,85,247,0.4);
+            color: #c084fc;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #a3a3a3;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-price { font-size: 1.5rem; font-weight: 700; color: #a855f7; margin-bottom: 8px; }
+        .hero-price-note { font-size: 0.9rem; color: #6b7280; margin-bottom: 32px; }
+        .hero-btn {
+            display: inline-block;
+            background: #a855f7;
+            color: white;
+            padding: 18px 56px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(168,85,247,0.35);
+        }
+        .hero-btn:hover { background: #9333ea; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(168,85,247,0.45); }
+        .hero-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+        .social-proof-bar {
+            background: #141414;
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .social-proof-bar span { color: #a855f7; font-weight: 600; }
+        .pain-section { padding: 80px 0; background: #0a0a0a; }
+        .pain-section .section-label { text-align: center; color: #ef4444; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .pain-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+        .pain-card { background: #141414; border: 1px solid #262626; border-left: 3px solid #ef4444; border-radius: 10px; padding: 28px; }
+        .pain-card .pain-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+        .pain-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .pain-card p { color: #a3a3a3; font-size: 0.95rem; line-height: 1.6; }
+
+        /* Matrix Preview */
+        .preview-section { padding: 80px 0; background: #0d1117; }
+        .preview-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 16px; }
+        .preview-section .preview-subtitle { text-align: center; color: #a3a3a3; margin-bottom: 48px; font-size: 1.05rem; }
+
+        /* Content Matrix */
+        .matrix-wrapper { overflow-x: auto; border: 1px solid #262626; border-radius: 12px; margin-bottom: 32px; }
+        .matrix-header { background: #1a0d2e; border-bottom: 1px solid #3b1f5e; border-radius: 12px 12px 0 0; padding: 16px 24px; }
+        .matrix-header-title { color: #c084fc; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .matrix-header-subtitle { color: #6b7280; font-size: 0.8rem; margin-top: 4px; }
+        .matrix-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        .matrix-table .mh { background: #1a0d2e; color: #c084fc; font-weight: 700; padding: 10px 16px; border: 1px solid #2d1a44; white-space: nowrap; text-align: left; }
+        .matrix-table .mc { background: #0f0a1a; color: #e2e8f0; padding: 10px 16px; border: 1px solid #1a1030; vertical-align: top; }
+        .matrix-table .mc-platform { font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
+        .matrix-table .mc-count { display: inline-block; background: #2d1a44; color: #c084fc; border-radius: 100px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700; margin-left: 4px; }
+        .matrix-table .mc-prompt { color: #7c3aed; font-size: 0.78rem; margin-top: 4px; font-style: italic; }
+        .matrix-table .mc-status { font-size: 0.78rem; }
+        .matrix-table .mc-status.ready { color: #10b981; }
+        .matrix-table .mc-status.ai { color: #60a5fa; }
+        .matrix-table .mc tr:hover td { background: #150f22; }
+
+        .spreadsheet-wrapper { overflow-x: auto; border: 1px solid #262626; border-radius: 12px; background: #1a1a2e; margin-bottom: 32px; }
+        .sheet-tabs { display: flex; gap: 0; border-bottom: 1px solid #262626; background: #111827; border-radius: 12px 12px 0 0; overflow-x: auto; }
+        .sheet-tab { padding: 10px 20px; font-size: 0.8rem; color: #6b7280; border-right: 1px solid #262626; cursor: pointer; white-space: nowrap; }
+        .sheet-tab.active { background: #1a0d2e; color: #c084fc; font-weight: 600; }
+
+        .features-section { padding: 80px 0; background: #141414; }
+        .features-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 16px; }
+        .features-section .features-sub { text-align: center; color: #a3a3a3; margin-bottom: 56px; font-size: 1.05rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .feature-item { display: flex; gap: 16px; align-items: flex-start; }
+        .feature-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 2px; }
+        .feature-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+        .feature-text p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.6; }
+
+        .for-section { padding: 80px 0; background: #0a0a0a; }
+        .for-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto; }
+        .for-card { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 32px; text-align: center; }
+        .for-card .for-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+        .for-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
+        .for-card p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.65; }
+
+        .deliverables-section { padding: 80px 0; background: #141414; }
+        .deliverables-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .deliverables-list { max-width: 640px; margin: 0 auto; list-style: none; }
+        .deliverables-list li { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #262626; }
+        .deliverables-list li:last-child { border-bottom: none; }
+        .del-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .del-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .del-text p { color: #a3a3a3; font-size: 0.875rem; }
+
+        .pricing-section { padding: 80px 0; background: #0a0a0a; text-align: center; }
+        .pricing-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .pricing-card { max-width: 480px; margin: 0 auto; background: #141414; border: 1px solid #a855f7; border-radius: 16px; padding: 48px 40px; box-shadow: 0 0 60px rgba(168,85,247,0.12); }
+        .price-was { color: #6b7280; font-size: 1.1rem; text-decoration: line-through; margin-bottom: 4px; }
+        .price-now { font-size: 4rem; font-weight: 800; color: #a855f7; line-height: 1; margin-bottom: 8px; }
+        .price-period { color: #a3a3a3; font-size: 0.95rem; margin-bottom: 32px; }
+        .pricing-includes { text-align: left; margin-bottom: 36px; list-style: none; }
+        .pricing-includes li { padding: 8px 0; color: #d1d5db; font-size: 0.95rem; display: flex; gap: 10px; align-items: center; }
+        .pricing-includes li::before { content: "✓"; color: #a855f7; font-weight: 700; flex-shrink: 0; }
+        .value-anchor { font-size: 0.875rem; color: #6b7280; margin-top: 20px; }
+
+        .faq-section { padding: 80px 0; background: #141414; }
+        .faq-section h2 { text-align: center; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 48px; }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border: 1px solid #262626; border-radius: 10px; padding: 24px 28px; margin-bottom: 16px; background: #0a0a0a; }
+        .faq-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: #f3f4f6; }
+        .faq-item p { color: #a3a3a3; font-size: 0.9rem; line-height: 1.7; }
+
+        .final-cta { padding: 100px 0; background: radial-gradient(ellipse at bottom, #2d1a44 0%, #0a0a0a 60%); text-align: center; }
+        .final-cta h2 { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; margin-bottom: 20px; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .final-cta p { color: #a3a3a3; font-size: 1.1rem; margin-bottom: 40px; }
+        .guarantee-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10b981; padding: 10px 20px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-top: 24px; margin-right: 12px; }
+        .stripe-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); color: #a5b4fc; padding: 10px 20px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-top: 24px; }
+        @media (max-width: 768px) { .pricing-card { padding: 36px 24px; } .price-now { font-size: 3rem; } }
+
+        /* Content multiplier visual */
+        .multiplier-visual {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .multiplier-center {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .blog-input {
+            display: inline-block;
+            background: #2d1a44;
+            border: 2px solid #7c3aed;
+            border-radius: 10px;
+            padding: 16px 28px;
+            color: #e2e8f0;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .arrow-down {
+            display: block;
+            color: #7c3aed;
+            font-size: 2rem;
+            margin: 12px 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .output-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .output-item {
+            background: #0f0a1a;
+            border: 1px solid #2d1a44;
+            border-radius: 8px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .output-item .out-icon { font-size: 1.25rem; flex-shrink: 0; }
+        .output-item .out-text { font-size: 0.875rem; color: #d1d5db; font-weight: 500; }
+        .output-item .out-count { margin-left: auto; background: #2d1a44; color: #c084fc; border-radius: 100px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <div style="padding: 16px 0; border-bottom: 1px solid #262626; background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Bevoza</a>
+            <button class="hero-btn" onclick="checkout('bev-content-system')" style="padding: 10px 28px; font-size: 0.95rem;">Buy Now — $24</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">✍️ For Content Creators & Bloggers</div>
+            <h1>You Write One Great Blog Post. Then It Dies. That's a $1,000 Problem.</h1>
+            <p class="subtitle">The Content Multiplication System turns a single blog post into 20+ pieces of platform-native content — tweets, threads, LinkedIn posts, newsletters, YouTube scripts, podcast notes, and Instagram carousels. With AI prompts built in for every format.</p>
+            <div class="hero-price">$24 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-content-system')">Get Instant Access — $24</button>
+            <p style="color: #4b5563; font-size: 0.85rem; margin-top: 16px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <span>100+</span> creators are multiplying their content with this system &nbsp;·&nbsp; ⭐⭐⭐⭐⭐ &nbsp;·&nbsp; <span>30-day</span> money-back guarantee
+    </div>
+
+    <!-- Pain Points -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-label">Sound Familiar?</div>
+            <h2>You're Creating Great Content. Just Not Enough of It — and in the Wrong Places.</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">⏱️</span>
+                    <h3>You spend 4 hours writing a blog post. It gets 200 views. Then it disappears.</h3>
+                    <p>That post could have been 12 tweets, a LinkedIn article, a newsletter issue, and a YouTube script. Instead, it's buried on page 4 of your blog, earning nothing.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">😤</span>
+                    <h3>"I need to be on more platforms" — but you don't have time</h3>
+                    <p>You know you should be posting on LinkedIn and Twitter and creating video. But creating original content for each? That's a full-time job you don't have.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🤷</span>
+                    <h3>You don't know how to adapt your content to each platform's style</h3>
+                    <p>A blog post ≠ a tweet thread ≠ a LinkedIn post. Each format has its own rhythm. You know it, but converting between them feels like starting from zero.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🗓️</span>
+                    <h3>No editorial calendar = posting in bursts, then going silent</h3>
+                    <p>You post 5 things in one week, disappear for 3. The algorithm punishes inconsistency. Your audience forgets you exist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual: 1 → 20 -->
+    <section class="preview-section">
+        <div class="container">
+            <h2>1 Blog Post → 20+ Pieces of Content</h2>
+            <p class="preview-subtitle">Here's the exact repurposing matrix built into the system.</p>
+
+            <div class="multiplier-visual">
+                <div class="multiplier-center">
+                    <div class="blog-input">📝 1 Blog Post (1,500–3,000 words)</div>
+                    <span class="arrow-down">↓</span>
+                    <div style="color:#c084fc; font-size:0.85rem; font-weight:600; margin-bottom:24px;">Run through the Content Multiplication Matrix</div>
+                </div>
+                <div class="output-grid">
+                    <div class="output-item"><span class="out-icon">🐦</span><span class="out-text">Twitter/X Tweets</span><span class="out-count">5–8</span></div>
+                    <div class="output-item"><span class="out-icon">🧵</span><span class="out-text">Twitter Thread</span><span class="out-count">1</span></div>
+                    <div class="output-item"><span class="out-icon">💼</span><span class="out-text">LinkedIn Article</span><span class="out-count">1</span></div>
+                    <div class="output-item"><span class="out-icon">📣</span><span class="out-text">LinkedIn Posts</span><span class="out-count">3</span></div>
+                    <div class="output-item"><span class="out-icon">📧</span><span class="out-text">Newsletter Issue</span><span class="out-count">1</span></div>
+                    <div class="output-item"><span class="out-icon">🎬</span><span class="out-text">YouTube Script</span><span class="out-count">1</span></div>
+                    <div class="output-item"><span class="out-icon">🎙️</span><span class="out-text">Podcast Episode Notes</span><span class="out-count">1</span></div>
+                    <div class="output-item"><span class="out-icon">📱</span><span class="out-text">Instagram Carousel</span><span class="out-count">1 (10 slides)</span></div>
+                    <div class="output-item"><span class="out-icon">📌</span><span class="out-text">Pinterest Pins</span><span class="out-count">3</span></div>
+                    <div class="output-item"><span class="out-icon">💬</span><span class="out-text">Quote Graphics</span><span class="out-count">5</span></div>
+                </div>
+                <div style="text-align:center; margin-top:24px; font-size:1.1rem; font-weight:700; color:#c084fc;">
+                    1 post → 22+ pieces of content
+                </div>
+                <div style="text-align:center; font-size:0.85rem; color:#6b7280; margin-top:8px;">
+                    AI prompts included for every single format above
+                </div>
+            </div>
+
+            <!-- Matrix Table Preview -->
+            <div class="matrix-wrapper">
+                <div class="matrix-header">
+                    <div class="matrix-header-title">📋 Content Repurposing Matrix — Sample Row</div>
+                    <div class="matrix-header-subtitle">One row per blog post. Track status across all formats.</div>
+                </div>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <td class="mh" style="min-width:180px;">Blog Post</td>
+                            <td class="mh">Date Published</td>
+                            <td class="mh">Twitter Tweets</td>
+                            <td class="mh">Twitter Thread</td>
+                            <td class="mh">LinkedIn Article</td>
+                            <td class="mh">Newsletter</td>
+                            <td class="mh">YouTube Script</td>
+                            <td class="mh">Podcast Notes</td>
+                            <td class="mh">Instagram Carousel</td>
+                            <td class="mh">Total Pieces</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mc"><strong>How I Write 10K Words/Week</strong></td>
+                            <td class="mc" style="color:#6b7280;">Jan 15</td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span><div class="mc-prompt">AI prompt: "Extract 7 insights as standalone tweets"</div></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span><div class="mc-prompt">AI prompt: "Create a 12-tweet thread with hook"</div></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ai">🤖 In Progress</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Not started</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Not started</span></td>
+                            <td class="mc" style="color:#c084fc; font-weight:700;">9 / 22</td>
+                        </tr>
+                        <tr>
+                            <td class="mc"><strong>The Compound Content Strategy</strong></td>
+                            <td class="mc" style="color:#6b7280;">Jan 22</td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc"><span class="mc-status ready">✓ Done</span></td>
+                            <td class="mc" style="color:#10b981; font-weight:700;">22 / 22 ✓</td>
+                        </tr>
+                        <tr>
+                            <td class="mc"><strong>SEO for Solopreneurs (No Agency Needed)</strong></td>
+                            <td class="mc" style="color:#6b7280;">Feb 5</td>
+                            <td class="mc"><span class="mc-status ai">🤖 Drafting</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc"><span class="mc-status" style="color:#6b7280;">⬜ Queued</span></td>
+                            <td class="mc" style="color:#f59e0b; font-weight:700;">2 / 22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Editorial Calendar Preview -->
+            <div style="background:#141414; border:1px solid #262626; border-radius:12px; padding:28px; max-width:800px; margin:0 auto 20px;">
+                <div style="font-size:0.8rem; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:20px;">🗓️ 4-WEEK EDITORIAL CALENDAR (SAMPLE)</div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+                    <div style="background:#0f0a1a; border:1px solid #2d1a44; border-radius:8px; padding:12px;">
+                        <div style="font-size:0.75rem; color:#c084fc; font-weight:700; margin-bottom:8px;">WEEK 1</div>
+                        <div style="font-size:0.78rem; color:#e2e8f0; line-height:1.8;">Mon: Blog live<br>Tue: Twitter thread<br>Wed: LinkedIn article<br>Thu: 5 tweets<br>Fri: Newsletter<br>Sat: IG carousel</div>
+                    </div>
+                    <div style="background:#0f0a1a; border:1px solid #2d1a44; border-radius:8px; padding:12px;">
+                        <div style="font-size:0.75rem; color:#c084fc; font-weight:700; margin-bottom:8px;">WEEK 2</div>
+                        <div style="font-size:0.78rem; color:#e2e8f0; line-height:1.8;">Mon: YouTube script<br>Tue: LinkedIn posts x3<br>Wed: Quote graphics<br>Thu: Podcast notes<br>Fri: Repurpose old post<br>Sat: Engagement day</div>
+                    </div>
+                    <div style="background:#0f0a1a; border:1px solid #2d1a44; border-radius:8px; padding:12px;">
+                        <div style="font-size:0.75rem; color:#c084fc; font-weight:700; margin-bottom:8px;">WEEK 3</div>
+                        <div style="font-size:0.78rem; color:#e2e8f0; line-height:1.8;">Mon: Blog live<br>Tue: Twitter thread<br>Wed: Newsletter<br>Thu: 5 tweets<br>Fri: LinkedIn article<br>Sat: IG carousel</div>
+                    </div>
+                    <div style="background:#0f0a1a; border:1px solid #2d1a44; border-radius:8px; padding:12px;">
+                        <div style="font-size:0.75rem; color:#c084fc; font-weight:700; margin-bottom:8px;">WEEK 4</div>
+                        <div style="font-size:0.78rem; color:#e2e8f0; line-height:1.8;">Mon: YouTube script<br>Tue: LinkedIn posts x3<br>Wed: Quote graphics<br>Thu: Podcast notes<br>Fri: Monthly review<br>Sat: Plan Month 2</div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center; color:#6b7280; font-size:0.85rem;">↑ Sample calendar. The template auto-populates based on your posting frequency preferences.</p>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What's Inside the Content Multiplication System</h2>
+            <p class="features-sub">8 tabs. Every format covered. AI prompts for every step.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">🔄</span>
+                    <div class="feature-text"><h4>Content Repurposing Matrix</h4><p>One row per blog post. Track status across 8 output formats. See exactly what's been created, what's in progress, what's queued.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-text"><h4>AI Prompt Library — 40 Prompts</h4><p>Specific ChatGPT/Claude prompts for every format: tweet extraction, thread creation, LinkedIn adaptation, newsletter condensing, YouTube scripting, podcast notes, carousel slide creation.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🗓️</span>
+                    <div class="feature-text"><h4>4-Week Editorial Calendar</h4><p>Pre-filled posting schedule based on your blog cadence. Post 1x/week on your blog, show up everywhere else automatically.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <div class="feature-text"><h4>Content Performance Tracker</h4><p>Track views, engagement, clicks, and conversions per piece across all platforms. Find what resonates, double down on it.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✍️</span>
+                    <div class="feature-text"><h4>Platform Style Guides</h4><p>Tone, length, formatting rules for Twitter, LinkedIn, newsletters, YouTube, and Instagram — so your content sounds native on every platform.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📌</span>
+                    <div class="feature-text"><h4>Hook Formula Library</h4><p>20 proven hook formulas for tweets and threads. Copy-paste, fill in the blank, publish. Never stare at a blank first line again.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📈</span>
+                    <div class="feature-text"><h4>Monthly Content Audit</h4><p>Which posts got the most repurposed? Which platforms are growing? Monthly review template to optimize your content flywheel.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🧠</span>
+                    <div class="feature-text"><h4>Content Idea Bank</h4><p>A structured place to capture ideas, categorize them by format, and pull from when you need inspiration. 50 seed prompts included.</p></div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔓</span>
+                    <div class="feature-text"><h4>Fully Editable</h4><p>Add platforms, remove ones you don't use, customize for your niche. Every cell is unlocked and adaptable.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="for-section">
+        <div class="container">
+            <h2>This Was Built For You If...</h2>
+            <div class="for-grid">
+                <div class="for-card">
+                    <span class="for-emoji">✍️</span>
+                    <h3>The Blogger Who's Tired of Writing Into the Void</h3>
+                    <p>You publish consistently but growth is slow. You need your content to work harder without working more. This system turns every post into a week of content.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">📣</span>
+                    <h3>The Solopreneur Who Needs to Build an Audience</h3>
+                    <p>You have expertise. You write about it occasionally. But you're not building the audience that turns into clients. Consistent, multi-platform presence is the gap.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🎯</span>
+                    <h3>The Marketer Trying to 10x Output Without 10x Budget</h3>
+                    <p>You're responsible for content across channels but don't have the team to create original content everywhere. This system lets one piece of content cover every platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2>Everything You Get for $24</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Content Multiplication System (Google Sheets)</h4>
+                        <p>8-tab template with repurposing matrix, editorial calendar, performance tracker, and content idea bank. Works in Google Sheets (free) and exports to Excel.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🤖</span>
+                    <div class="del-text">
+                        <h4>AI Prompt Library — 40 Prompts (PDF)</h4>
+                        <p>Format-specific prompts for every output type: tweets, threads, LinkedIn, newsletters, YouTube scripts, podcast notes, and Instagram carousels.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📖</span>
+                    <div class="del-text">
+                        <h4>Platform Style Guide (PDF)</h4>
+                        <p>Tone, format, length, and posting best practices for each platform. Makes your content sound native everywhere.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🎥</span>
+                    <div class="del-text">
+                        <h4>Video Walkthrough</h4>
+                        <p>15-minute screen recording showing the entire system in action — from blog post input to fully planned content calendar.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Free Lifetime Updates</h4>
+                        <p>New platforms, new formats, new AI prompts — you get every update at no charge.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>One System. Every Platform. Covered.</h2>
+            <div class="pricing-card">
+                <div class="price-was">Worth $150+ in content strategist time</div>
+                <div class="price-now">$24</div>
+                <div class="price-period">one-time payment · instant delivery</div>
+                <ul class="pricing-includes">
+                    <li>Content Multiplication System (Google Sheets, 8 tabs)</li>
+                    <li>AI Prompt Library — 40 prompts (PDF)</li>
+                    <li>Platform Style Guide (PDF)</li>
+                    <li>Hook Formula Library — 20 hooks</li>
+                    <li>Video Walkthrough (15 min)</li>
+                    <li>Free lifetime updates</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <button class="hero-btn" onclick="checkout('bev-content-system')" style="width:100%;">Get Instant Access — $24</button>
+                <div class="value-anchor">💡 Most creators repurpose their backlog of 10+ posts in the first week — generating 200+ pieces of ready-to-publish content.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>What format is the template?</h4>
+                    <p>Google Sheets. After purchase, you'll get a link to copy the file to your Google Drive instantly. It also exports to Excel if you prefer Microsoft Office.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need to write the content myself, or does AI do it?</h4>
+                    <p>The AI prompts do the heavy lifting — you paste them into ChatGPT or Claude along with your blog post, and get platform-ready drafts in seconds. You still review and polish, but the hard part is done.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if I only use 3 of the 8 output formats?</h4>
+                    <p>That's fine — the matrix is fully customizable. Delete the columns you don't use. Most creators start with 3–4 formats and expand as they build the habit.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the refund policy?</h4>
+                    <p>30-day no-questions-asked refund. If it doesn't work for you, email steve@bevoza.com within 30 days for a full refund.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I use this for a client or team?</h4>
+                    <p>The license covers one user. If you want to use this for a team, email steve@bevoza.com for a team pricing quote.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Does this work for podcast episodes or YouTube videos, not just blog posts?</h4>
+                    <p>Yes. The system is content-agnostic. Start with a video transcript, podcast episode, or long-form LinkedIn post instead of a blog — the repurposing matrix works in any direction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Your Next Blog Post Should Do 20x the Work.</h2>
+            <p>Write once. Show up everywhere. Build the audience you've been working toward.</p>
+            <button class="hero-btn" onclick="checkout('bev-content-system')">Get the Content Multiplication System — $24</button>
+            <br>
+            <span class="guarantee-badge">✅ 30-Day Money-Back Guarantee</span>
+            <span class="stripe-badge">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/" style="color:#6b7280; text-decoration:none;">← Back to Bevoza</a> &nbsp;·&nbsp; &copy; 2026 Bevoza &middot; Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product) {
+            const btn = event.target;
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            try {
+                const res = await fetch(CHECKOUT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = origText;
+                }
+            } catch (e) {
+                alert('Connection error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        }
+    </script>
+</body>
+</html>
