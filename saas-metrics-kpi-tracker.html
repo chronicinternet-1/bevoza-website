@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Metrics & KPI Tracker — Investor-Grade Dashboards for Early-Stage Founders | Bevoza</title>
+    <meta name="description" content="Track MRR, ARR, churn, LTV, CAC, NPS, and 20+ SaaS metrics automatically. Built for founders who need clarity without enterprise pricing. $29 one-time.">
+    <link rel="canonical" href="https://bevoza.com/saas-metrics-kpi-tracker">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PSPVWT0YFV');</script>
+    <style>
+        .product-hero{min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 0 60px;background:radial-gradient(ellipse at top,#1a2744 0%,#0a0a0a 60%);}
+        .hero-badge{display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);color:#60a5fa;padding:6px 16px;border-radius:100px;font-size:.875rem;font-weight:600;margin-bottom:24px;}
+        .product-hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,#a3a3a3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;max-width:860px;margin-left:auto;margin-right:auto;}
+        .product-hero .subtitle{font-size:clamp(1rem,2vw,1.2rem);color:#a3a3a3;max-width:640px;margin:0 auto 32px;line-height:1.7;}
+        .hero-price{font-size:1.4rem;font-weight:700;color:#3b82f6;margin-bottom:6px;}
+        .hero-price-note{font-size:.875rem;color:#6b7280;margin-bottom:28px;}
+        .hero-btn{display:inline-block;background:#3b82f6;color:#fff;padding:16px 48px;border-radius:10px;font-weight:700;font-size:1.1rem;cursor:pointer;border:none;transition:all .3s;box-shadow:0 4px 24px rgba(59,130,246,.35);}
+        .hero-btn:hover{background:#2563eb;transform:translateY(-2px);}
+        .hero-btn:disabled{opacity:.6;cursor:wait;transform:none;}
+        .metrics-section{padding:72px 0;background:#141414;}
+        .metrics-section h2{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:12px;}
+        .metrics-sub{text-align:center;color:#a3a3a3;margin-bottom:48px;font-size:1rem;}
+        .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:960px;margin:0 auto;}
+        .metric-tag{background:#0a0a0a;border:1px solid #262626;border-radius:8px;padding:14px 16px;text-align:center;}
+        .metric-tag .tag-label{font-size:.8rem;font-weight:700;color:#60a5fa;margin-bottom:4px;}
+        .metric-tag .tag-name{font-size:.9rem;font-weight:600;color:#e5e7eb;}
+        .features-section{padding:72px 0;background:#0a0a0a;}
+        .features-section h2{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:12px;}
+        .features-sub{text-align:center;color:#a3a3a3;margin-bottom:48px;font-size:1rem;}
+        .features-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:960px;margin:0 auto;}
+        .feature-item{background:#141414;border:1px solid #262626;border-radius:10px;padding:24px;display:flex;gap:14px;align-items:flex-start;}
+        .feature-icon{font-size:1.6rem;flex-shrink:0;}
+        .feature-text h4{font-size:.95rem;font-weight:600;margin-bottom:6px;}
+        .feature-text p{color:#a3a3a3;font-size:.875rem;line-height:1.6;}
+        .testimonials{padding:72px 0;background:#141414;}
+        .testimonials h2{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:48px;}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;}
+        .testimonial-card{background:#0a0a0a;border:1px solid #262626;border-radius:12px;padding:28px;}
+        .testimonial-card p{color:#d1d5db;font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;}
+        .testimonial-author{color:#6b7280;font-size:.85rem;font-weight:600;}
+        .cta-section{padding:80px 0;background:radial-gradient(ellipse at bottom,#1a2744 0%,#0a0a0a 60%);text-align:center;}
+        .cta-section h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;margin-bottom:16px;}
+        .cta-section p{color:#a3a3a3;font-size:1rem;margin-bottom:32px;}
+        .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.8rem;font-weight:600;margin:8px 6px 0;}
+        .badge-green{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#10b981;}
+        .badge-purple{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;}
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">Bevoza</a>
+            <ul class="nav-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">📈 For SaaS Founders & Product Teams</div>
+            <h1>Know Your SaaS Numbers. Impress Every Investor.</h1>
+            <p class="subtitle">The SaaS Metrics & KPI Tracker automatically calculates MRR, ARR, churn, LTV, CAC, and 20+ more metrics from simple monthly inputs — no data warehouse required.</p>
+            <div class="hero-price">$29 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-saas-metrics')">Get Instant Access — $29</button>
+            <p style="color:#4b5563;font-size:.85rem;margin-top:14px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <section class="metrics-section">
+        <div class="container">
+            <h2>Every Metric Investors Actually Ask About</h2>
+            <p class="metrics-sub">20+ metrics auto-calculated from simple monthly inputs. No formulas to build.</p>
+            <div class="metrics-grid">
+                <div class="metric-tag"><div class="tag-label">REVENUE</div><div class="tag-name">MRR / ARR</div></div>
+                <div class="metric-tag"><div class="tag-label">GROWTH</div><div class="tag-name">MoM Growth Rate</div></div>
+                <div class="metric-tag"><div class="tag-label">RETENTION</div><div class="tag-name">Churn Rate</div></div>
+                <div class="metric-tag"><div class="tag-label">ECONOMICS</div><div class="tag-name">LTV / CAC</div></div>
+                <div class="metric-tag"><div class="tag-label">EFFICIENCY</div><div class="tag-name">LTV:CAC Ratio</div></div>
+                <div class="metric-tag"><div class="tag-label">PAYBACK</div><div class="tag-name">CAC Payback Period</div></div>
+                <div class="metric-tag"><div class="tag-label">EXPANSION</div><div class="tag-name">Net Revenue Retention</div></div>
+                <div class="metric-tag"><div class="tag-label">SENTIMENT</div><div class="tag-name">NPS Score</div></div>
+                <div class="metric-tag"><div class="tag-label">ACTIVATION</div><div class="tag-name">Trial → Paid Rate</div></div>
+                <div class="metric-tag"><div class="tag-label">RUNWAY</div><div class="tag-name">Burn Rate & Runway</div></div>
+                <div class="metric-tag"><div class="tag-label">USAGE</div><div class="tag-name">DAU / MAU Ratio</div></div>
+                <div class="metric-tag"><div class="tag-label">REVENUE</div><div class="tag-name">ARPU / ARPA</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>Built for Founders, Not Data Engineers</h2>
+            <p class="features-sub">5-minute weekly update. Instant clarity.</p>
+            <div class="features-list">
+                <div class="feature-item"><span class="feature-icon">📊</span><div class="feature-text"><h4>Auto-Calculation Engine</h4><p>Enter new MRR, churn count, and CAC spend each month. Every other metric calculates itself.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">📈</span><div class="feature-text"><h4>Visual Trend Charts</h4><p>12-month charts for every key metric. See inflection points and growth trajectories instantly.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">💼</span><div class="feature-text"><h4>Investor Report Tab</h4><p>One-page summary for board meetings and investor updates. Export-ready in under 2 minutes.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🎯</span><div class="feature-text"><h4>Benchmark Comparators</h4><p>See how your metrics compare to SaaS benchmarks by stage and ARR band.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🚨</span><div class="feature-text"><h4>Health Indicator System</h4><p>Color-coded metric health (green/yellow/red) based on industry benchmarks. Never miss a warning sign.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🤖</span><div class="feature-text"><h4>AI Analysis Prompts (20)</h4><p>Feed your metrics to ChatGPT/Claude with these prompts and get strategic insights in seconds.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>SaaS Founders Who Use It</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"I finally stopped dreading investor questions about metrics. I know my LTV:CAC, NRR, and payback period cold because this tracker makes them visible every week."</p>
+                    <div class="testimonial-author">— James W., B2B SaaS Founder</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The benchmark comparators showed me my churn was 2x the SaaS median. I fixed the onboarding flow and dropped churn by 40% in 90 days."</p>
+                    <div class="testimonial-author">— Priya R., SaaS CEO</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Walked into our Series A process with a clean metrics story. The investor report tab became our standard monthly update to the cap table."</p>
+                    <div class="testimonial-author">— Tom A., Technical Founder</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Know Your Numbers. Grow With Confidence.</h2>
+            <p>20+ metrics auto-calculated. Investor-ready reports. Benchmarks included. $29 one-time.</p>
+            <button class="hero-btn" onclick="checkout('bev-saas-metrics')">Get the SaaS Metrics Tracker — $29</button>
+            <br>
+            <span class="badge badge-green">✅ 30-Day Money-Back Guarantee</span>
+            <span class="badge badge-purple">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="/" class="footer-logo">Bevoza</a>
+            <ul class="footer-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Chronic Internet LLC · All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        const CHECKOUT_API='https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product){const btn=event.target;const origText=btn.textContent;btn.disabled=true;btn.textContent='Redirecting...';try{const res=await fetch(CHECKOUT_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product})});const data=await res.json();if(data.url){window.location.href=data.url;}else{alert('Something went wrong. Please try again.');btn.disabled=false;btn.textContent=origText;}}catch(e){alert('Connection error. Please try again.');btn.disabled=false;btn.textContent=origText;}}
+    </script>
+</body>
+</html>

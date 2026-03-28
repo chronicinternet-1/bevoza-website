@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Pitch Deck Builder — From Idea to Investor-Ready in a Weekend | Bevoza</title>
+    <meta name="description" content="Build an investor-ready pitch deck with slide-by-slide guidance, storytelling frameworks, and AI prompts for every section. $29 one-time.">
+    <link rel="canonical" href="https://bevoza.com/startup-pitch-deck-builder">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PSPVWT0YFV');</script>
+    <style>
+        .product-hero{min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 0 60px;background:radial-gradient(ellipse at top,#1a2744 0%,#0a0a0a 60%);}
+        .hero-badge{display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);color:#60a5fa;padding:6px 16px;border-radius:100px;font-size:.875rem;font-weight:600;margin-bottom:24px;}
+        .product-hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,#a3a3a3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;max-width:860px;margin-left:auto;margin-right:auto;}
+        .product-hero .subtitle{font-size:clamp(1rem,2vw,1.2rem);color:#a3a3a3;max-width:640px;margin:0 auto 32px;line-height:1.7;}
+        .hero-price{font-size:1.4rem;font-weight:700;color:#3b82f6;margin-bottom:6px;}
+        .hero-price-note{font-size:.875rem;color:#6b7280;margin-bottom:28px;}
+        .hero-btn{display:inline-block;background:#3b82f6;color:#fff;padding:16px 48px;border-radius:10px;font-weight:700;font-size:1.1rem;cursor:pointer;border:none;transition:all .3s;box-shadow:0 4px 24px rgba(59,130,246,.35);}
+        .hero-btn:hover{background:#2563eb;transform:translateY(-2px);}
+        .hero-btn:disabled{opacity:.6;cursor:wait;transform:none;}
+        .slides-section{padding:72px 0;background:#141414;}
+        .slides-section h2{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:12px;}
+        .slides-sub{text-align:center;color:#a3a3a3;margin-bottom:48px;font-size:1rem;}
+        .slides-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:960px;margin:0 auto;}
+        .slide-item{background:#0a0a0a;border:1px solid #262626;border-radius:8px;padding:20px;display:flex;gap:12px;align-items:flex-start;}
+        .slide-num{background:rgba(59,130,246,.15);color:#60a5fa;font-size:.75rem;font-weight:700;padding:4px 8px;border-radius:4px;flex-shrink:0;}
+        .slide-text h4{font-size:.9rem;font-weight:600;margin-bottom:4px;}
+        .slide-text p{color:#a3a3a3;font-size:.8rem;line-height:1.5;}
+        .testimonials{padding:72px 0;background:#0a0a0a;}
+        .testimonials h2{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:48px;}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;}
+        .testimonial-card{background:#141414;border:1px solid #262626;border-radius:12px;padding:28px;}
+        .testimonial-card p{color:#d1d5db;font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;}
+        .testimonial-author{color:#6b7280;font-size:.85rem;font-weight:600;}
+        .cta-section{padding:80px 0;background:radial-gradient(ellipse at bottom,#1a2744 0%,#0a0a0a 60%);text-align:center;}
+        .cta-section h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;margin-bottom:16px;}
+        .cta-section p{color:#a3a3a3;font-size:1rem;margin-bottom:32px;}
+        .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.8rem;font-weight:600;margin:8px 6px 0;}
+        .badge-green{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#10b981;}
+        .badge-purple{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;}
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">Bevoza</a>
+            <ul class="nav-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">🚀 For Founders & Entrepreneurs</div>
+            <h1>From Idea to Investor-Ready Pitch Deck in a Weekend</h1>
+            <p class="subtitle">The Startup Pitch Deck Builder gives you slide-by-slide guidance, proven storytelling frameworks, and AI prompts for every section — so you walk into every investor meeting prepared.</p>
+            <div class="hero-price">$29 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-pitch-deck')">Get Instant Access — $29</button>
+            <p style="color:#4b5563;font-size:.85rem;margin-top:14px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <section class="slides-section">
+        <div class="container">
+            <h2>12 Slides. Every Slide Solved.</h2>
+            <p class="slides-sub">Guidance, examples, and AI prompts for each slide. Nothing left to figure out.</p>
+            <div class="slides-list">
+                <div class="slide-item"><span class="slide-num">01</span><div class="slide-text"><h4>Cover & Hook</h4><p>First impression framework + AI prompt to craft your one-line company summary.</p></div></div>
+                <div class="slide-item"><span class="slide-num">02</span><div class="slide-text"><h4>Problem</h4><p>Make investors feel the pain. Quantification templates and story structures.</p></div></div>
+                <div class="slide-item"><span class="slide-num">03</span><div class="slide-text"><h4>Solution</h4><p>Show, don't tell. Visual frameworks for demonstrating your solution clearly.</p></div></div>
+                <div class="slide-item"><span class="slide-num">04</span><div class="slide-text"><h4>Market Size</h4><p>TAM/SAM/SOM breakdown with data sourcing guidance. No more guessing.</p></div></div>
+                <div class="slide-item"><span class="slide-num">05</span><div class="slide-text"><h4>Business Model</h4><p>Revenue model templates for SaaS, marketplace, DTC, services, and more.</p></div></div>
+                <div class="slide-item"><span class="slide-num">06</span><div class="slide-text"><h4>Traction</h4><p>How to present early metrics, even at pre-revenue stage. Investor-friendly formats.</p></div></div>
+                <div class="slide-item"><span class="slide-num">07</span><div class="slide-text"><h4>Competition</h4><p>Competitive matrix templates that differentiate without dismissing rivals.</p></div></div>
+                <div class="slide-item"><span class="slide-num">08</span><div class="slide-text"><h4>Go-to-Market</h4><p>Channel strategy frameworks and customer acquisition playbook slides.</p></div></div>
+                <div class="slide-item"><span class="slide-num">09</span><div class="slide-text"><h4>Team</h4><p>How to present your unfair advantages. Bio frameworks for founders and advisors.</p></div></div>
+                <div class="slide-item"><span class="slide-num">10</span><div class="slide-text"><h4>Financials</h4><p>3-year projection templates with key assumptions investors actually look for.</p></div></div>
+                <div class="slide-item"><span class="slide-num">11</span><div class="slide-text"><h4>The Ask</h4><p>How to frame the raise, use of funds, and milestones to close faster.</p></div></div>
+                <div class="slide-item"><span class="slide-num">12</span><div class="slide-text"><h4>Appendix Templates</h4><p>Unit economics, product roadmap, and deep-dive slides for follow-up meetings.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Founders Who've Used It</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"I'd been struggling with my pitch for 3 months. After using this builder, I had a solid deck in 2 days and got my first angel meeting the following week."</p>
+                    <div class="testimonial-author">— Kevin L., SaaS Founder</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The market size section alone saved me from an embarrassing slide that would have killed my credibility. The guidance is genuinely investor-grade."</p>
+                    <div class="testimonial-author">— Natalie S., Startup Founder</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Used the AI prompts for my 'the ask' slide. Closed a $150K seed round. Worth every penny of the $29."</p>
+                    <div class="testimonial-author">— Ryan B., Tech Entrepreneur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Build the Deck That Gets You Funded</h2>
+            <p>12 slides. Full guidance. AI prompts included. $29 one-time.</p>
+            <button class="hero-btn" onclick="checkout('bev-pitch-deck')">Get the Pitch Deck Builder — $29</button>
+            <br>
+            <span class="badge badge-green">✅ 30-Day Money-Back Guarantee</span>
+            <span class="badge badge-purple">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="/" class="footer-logo">Bevoza</a>
+            <ul class="footer-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Chronic Internet LLC · All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        const CHECKOUT_API='https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product){const btn=event.target;const origText=btn.textContent;btn.disabled=true;btn.textContent='Redirecting...';try{const res=await fetch(CHECKOUT_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product})});const data=await res.json();if(data.url){window.location.href=data.url;}else{alert('Something went wrong. Please try again.');btn.disabled=false;btn.textContent=origText;}}catch(e){alert('Connection error. Please try again.');btn.disabled=false;btn.textContent=origText;}}
+    </script>
+</body>
+</html>

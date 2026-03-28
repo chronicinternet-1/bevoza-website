@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bevoza.com/</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://bevoza.com/</loc><lastmod>2026-03-28</lastmod><priority>1.0</priority></url>
+  <url><loc>https://bevoza.com/about.html</loc><lastmod>2026-03-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://bevoza.com/contact.html</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://bevoza.com/terms.html</loc><lastmod>2026-03-28</lastmod><priority>0.3</priority></url>
+  <url><loc>https://bevoza.com/privacy.html</loc><lastmod>2026-03-28</lastmod><priority>0.3</priority></url>
+  <url><loc>https://bevoza.com/author-revenue-dashboard.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/solopreneur-financial-command-center.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/content-multiplication-system.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/freelancer-client-pipeline-tracker.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/ai-prompt-engineering-vault.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/startup-pitch-deck-builder.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/weekly-ceo-dashboard.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/social-media-content-calendar.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/ecommerce-launch-checklist.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/email-marketing-automation-playbook.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/saas-metrics-kpi-tracker.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/digital-product-launch-blueprint.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bevoza.com/personal-brand-strategy-kit.html</loc><lastmod>2026-03-28</lastmod><priority>0.9</priority></url>
 </urlset>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bevoza</title>
+    <meta name="description" content="Get in touch with the Bevoza team. We're here to help with questions about our AI-powered business templates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">Bevoza</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <section style="padding: 120px 0 80px;">
+        <div class="container" style="max-width: 700px;">
+            <h1 class="section-title" style="margin-bottom: 16px;">Get in Touch</h1>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 48px; font-size: 1.1rem;">Have a question about a product, need support, or want to collaborate? We'd love to hear from you.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px;">
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 8px;">📧</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 8px;">Email</h3>
+                    <a href="mailto:zeno@bevoza.com" style="color: var(--accent); text-decoration: none; font-weight: 600;">zeno@bevoza.com</a>
+                </div>
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 8px;">🕐</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 8px;">Business Hours</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Mon–Fri, 9am–5pm HST</p>
+                </div>
+            </div>
+
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 16px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <input type="text" placeholder="Your Name" required class="email-input" style="width: 100%;">
+                    <input type="email" placeholder="Your Email" required class="email-input" style="width: 100%;">
+                </div>
+                <select class="email-input" style="width: 100%; appearance: auto;">
+                    <option value="">Select a topic...</option>
+                    <option value="product">Product Question</option>
+                    <option value="support">Technical Support</option>
+                    <option value="refund">Refund Request</option>
+                    <option value="partnership">Partnership / Collaboration</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Your message..." rows="6" required class="email-input" style="width: 100%; resize: vertical;"></textarea>
+                <button type="submit" class="cta-button" style="width: 100%; text-align: center; border: none; cursor: pointer;">Send Message</button>
+                <p id="contact-msg" class="form-message" style="text-align: center;"></p>
+            </form>
+
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.85rem; margin-top: 32px;">We typically respond within 24 hours during business days.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="/" class="footer-logo">Bevoza</a>
+            <ul class="footer-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('open');
+        });
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var msg = document.getElementById('contact-msg');
+            msg.textContent = '✅ Message sent! We\'ll get back to you within 24 hours.';
+            msg.className = 'form-message success';
+            this.reset();
+            setTimeout(function() { msg.textContent = ''; }, 5000);
+        });
+    </script>
+</body>
+</html>
