@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Newsletter Launch System — Bevoza">
+  <meta property="og:description" content="From zero subscribers to a monetized newsletter in 90 days. The complete system — not just tips.">
+  <meta property="og:url" content="https://bevoza.com/newsletter-launch-system">
+  <meta property="og:image" content="https://bevoza.com/images/og-default.png">
+  <meta property="og:site_name" content="Bevoza">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Newsletter Launch System — Bevoza">
+  <meta name="twitter:description" content="From zero subscribers to a monetized newsletter in 90 days. The complete system — not just tips.">
+  <meta name="twitter:image" content="https://bevoza.com/images/og-default.png">
+
+    <title>Newsletter Launch System — From Zero to Monetized in 90 Days | Bevoza</title>
+    <meta name="description" content="Launch a profitable newsletter from scratch. 6 proven frameworks covering niche selection, welcome sequences, 90-day content calendar, growth playbook, and monetization map. $24 one-time.">
+    <link rel="canonical" href="https://bevoza.com/newsletter-launch-system">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+    <style>
+        /* Product page specific styles */
+        .product-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 60px;
+            background: radial-gradient(ellipse at top, #1a2744 0%, #0a0a0a 60%);
+        }
+        .product-hero .hero-badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.4);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #a3a3a3;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        .hero-price-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 18px 56px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+        }
+        .hero-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.45);
+        }
+        .hero-btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+        .social-proof-bar {
+            background: #141414;
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .social-proof-bar span {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Pain Points */
+        .pain-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .pain-section .section-label {
+            text-align: center;
+            color: #ef4444;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .pain-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pain-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-left: 3px solid #ef4444;
+            border-radius: 10px;
+            padding: 28px;
+        }
+        .pain-card .pain-icon {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .pain-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pain-card p {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .features-section .features-sub {
+            text-align: center;
+            color: #a3a3a3;
+            margin-bottom: 56px;
+            font-size: 1.05rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .feature-item {
+            background: #0a0a0a;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .feature-number {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #3b82f6;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.25);
+            border-radius: 6px;
+            padding: 4px 10px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .feature-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .feature-text p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Who It's For */
+        .for-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .for-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .for-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+        .for-card .for-emoji {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .for-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .for-card p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* What You Get */
+        .deliverables-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .deliverables-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .deliverables-list {
+            max-width: 640px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .deliverables-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #262626;
+        }
+        .deliverables-list li:last-child { border-bottom: none; }
+        .del-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .del-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .del-text p { color: #a3a3a3; font-size: 0.875rem; }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .pricing-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #141414;
+            border: 1px solid #3b82f6;
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 0 60px rgba(59,130,246,0.12);
+        }
+        .price-was {
+            color: #6b7280;
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        .price-now {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #3b82f6;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .price-period {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        .pricing-includes {
+            text-align: left;
+            margin-bottom: 36px;
+            list-style: none;
+        }
+        .pricing-includes li {
+            padding: 8px 0;
+            color: #d1d5db;
+            font-size: 0.95rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .pricing-includes li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .value-anchor {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 20px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid #262626;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            background: #0a0a0a;
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #f3f4f6;
+        }
+        .faq-item p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: radial-gradient(ellipse at bottom, #1a2744 0%, #0a0a0a 60%);
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-cta p {
+            color: #a3a3a3;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.3);
+            color: #10b981;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-right: 12px;
+        }
+        .stripe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.3);
+            color: #a5b4fc;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        .back-link {
+            display: inline-block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: #a3a3a3; }
+
+        @media (max-width: 768px) {
+            .pricing-card { padding: 36px 24px; }
+            .price-now { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <div style="padding: 16px 0; border-bottom: 1px solid #262626; background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Bevoza</a>
+            <button class="hero-btn" onclick="checkout('bev-newsletter-launch')" style="padding: 10px 28px; font-size: 0.95rem;">Buy Now — $24</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">✉️ For Creators & Solopreneurs</div>
+            <h1>From Zero Subscribers to a Monetized Newsletter in 90 Days.</h1>
+            <p class="subtitle">The complete launch system — not just tips. Six proven frameworks covering niche selection, welcome sequences, content planning, growth tactics, and monetization. Everything you need to build a newsletter that actually pays.</p>
+            <div class="hero-price">$24 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-newsletter-launch')">Get Instant Access — $24</button>
+            <p style="color: #4b5563; font-size: 0.85rem; margin-top: 16px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <span>Newsletter creators</span> are using this to launch and monetize faster &nbsp;·&nbsp; ⭐⭐⭐⭐⭐ &nbsp;·&nbsp; <span>30-day</span> money-back guarantee
+    </div>
+
+    <!-- Pain Points -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-label">Sound Familiar?</div>
+            <h2>You Want to Start a Newsletter. You Just Don't Know Where to Begin.</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">🤔</span>
+                    <h3>Don't know what to write about</h3>
+                    <p>You have ideas, but nothing feels specific enough. You're paralyzed by niche selection and haven't sent a single issue yet. The blank page wins every time.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📧</span>
+                    <h3>Welcome email is an afterthought</h3>
+                    <p>Someone subscribes and gets a generic "Thanks for signing up!" Your most-opened email — the one that sets expectations forever — is doing nothing for you.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📅</span>
+                    <h3>Posting randomly with no plan</h3>
+                    <p>You publish when inspired and ghost your list when you're busy. Inconsistency kills newsletters. Without a content system, you'll burn out by month two.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">💸</span>
+                    <h3>No idea how to make money from it</h3>
+                    <p>You've heard newsletters can be incredibly lucrative. But sponsorships, paid tiers, digital products — where do you even start, and when does it kick in?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What's Inside the System</h2>
+            <p class="features-sub">Six complete frameworks. Each one solves a specific problem between zero and monetized.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-number">01</span>
+                    <div class="feature-text">
+                        <h4>🎯 Niche Finder</h4>
+                        <p>Get 3 niche options — each with a unique angle, positioning statement, and ideal reader profile. Stop agonizing over your topic. Choose with confidence and launch.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">02</span>
+                    <div class="feature-text">
+                        <h4>✉️ Welcome Sequence Writer</h4>
+                        <p>A complete 3-email onboarding sequence: immediate value → your story → expectations and what's coming. Subject lines included. Turn new subscribers into loyal readers from day one.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">03</span>
+                    <div class="feature-text">
+                        <h4>📅 90-Day Content Calendar</h4>
+                        <p>12 weekly themes, a rotation of content types (teach / story / curate / challenge), and a content arc that builds momentum. Never stare at a blank screen on publishing day again.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">04</span>
+                    <div class="feature-text">
+                        <h4>✍️ Issue Writer Framework</h4>
+                        <p>A repeatable structure for every issue: subject line → hook → core content → takeaway → next-issue tease. Under 500 words. Designed to get read — not skimmed and deleted.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">05</span>
+                    <div class="feature-text">
+                        <h4>📈 Growth Playbook (0→1,000 Subscribers)</h4>
+                        <p>The 3 highest-leverage organic growth channels, a lead magnet design brief, cross-promotion strategy, and weekly subscriber targets. A roadmap to your first 1,000 without paid ads.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">06</span>
+                    <div class="feature-text">
+                        <h4>💰 Monetization Map</h4>
+                        <p>Revenue streams mapped to 500 / 1K / 5K / 10K subscriber milestones. Sponsorship pitch template, a digital product idea tailored to your niche, and paid tier strategy. Know exactly when and how you'll get paid.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="for-section">
+        <div class="container">
+            <h2>This Was Built For You If...</h2>
+            <div class="for-grid">
+                <div class="for-card">
+                    <span class="for-emoji">🌱</span>
+                    <h3>Aspiring Newsletter Creators</h3>
+                    <p>You've been thinking about starting a newsletter for months. You want to do it right the first time — with a real system, not scattered advice from 50 different blog posts.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🧩</span>
+                    <h3>Solopreneurs Who Want a Distribution Channel</h3>
+                    <p>You sell products or services and need a direct line to your audience — one you own. A newsletter is the highest-ROI channel for solopreneurs. This gets you there fast.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🚫</span>
+                    <h3>Creators Tired of Algorithm Dependency</h3>
+                    <p>You're done building on platforms that can shadowban, throttle, or delete your account. A newsletter is yours. These subscribers are yours. No algorithm decides your reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2>Everything You Get for $24</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <span class="del-icon">🎯</span>
+                    <div class="del-text">
+                        <h4>Niche Finder Framework</h4>
+                        <p>3 niche options with unique angle, positioning statement, and ideal reader profile. Plug in your interests and get clarity immediately.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">✉️</span>
+                    <div class="del-text">
+                        <h4>Welcome Sequence Writer</h4>
+                        <p>3-email onboarding sequence with subject lines. The most important emails you'll ever send — done right from day one.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📅</span>
+                    <div class="del-text">
+                        <h4>90-Day Content Calendar</h4>
+                        <p>12 weekly themes with content type rotation and a narrative arc. Three months of issues, planned and structured.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">✍️</span>
+                    <div class="del-text">
+                        <h4>Issue Writer Framework</h4>
+                        <p>The 5-part structure for every issue. Fill in the framework, publish under 500 words, and your readers will thank you for it.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📈</span>
+                    <div class="del-text">
+                        <h4>Growth Playbook (0→1,000)</h4>
+                        <p>Channel strategy, lead magnet brief, cross-promotion tactics, and weekly subscriber targets. Organic growth, no ad spend required.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">💰</span>
+                    <div class="del-text">
+                        <h4>Monetization Map</h4>
+                        <p>Revenue milestones at 500 / 1K / 5K / 10K subscribers, sponsorship pitch template, digital product idea, and paid tier strategy.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Free Lifetime Updates</h4>
+                        <p>As newsletter platforms and monetization strategies evolve, so does this system. You get every future update at no extra charge.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>One-Time Investment. A Newsletter That Pays You Back.</h2>
+            <div class="pricing-card">
+                <div class="price-was">Value: A newsletter consultant would charge $500+</div>
+                <div class="price-now">$24</div>
+                <div class="price-period">one-time payment · instant delivery</div>
+                <ul class="pricing-includes">
+                    <li>Niche Finder Framework</li>
+                    <li>Welcome Sequence Writer (3-email series)</li>
+                    <li>90-Day Content Calendar</li>
+                    <li>Issue Writer Framework</li>
+                    <li>Growth Playbook (0→1,000 subscribers)</li>
+                    <li>Monetization Map (500/1K/5K/10K milestones)</li>
+                    <li>Free lifetime updates</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <button class="hero-btn" onclick="checkout('bev-newsletter-launch')" style="width:100%;">Get Instant Access — $24</button>
+                <div class="value-anchor">💡 Most newsletters that monetize within 90 days do it because they launched with a system — not by winging it.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>What format does this come in?</h4>
+                    <p>The system is delivered as a structured document (PDF + Google Doc copy) with all 6 frameworks ready to use. Fill in your inputs and you're off. No special software required — just a newsletter platform like Beehiiv, Substack, or ConvertKit.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need an existing audience to make this work?</h4>
+                    <p>No. The Growth Playbook (Framework 5) is specifically designed for starting from zero. It maps out the three most effective organic channels for subscriber acquisition without needing an existing following or paid ads.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How long before I can realistically monetize?</h4>
+                    <p>The Monetization Map starts at 500 subscribers — which is achievable within 90 days following the Growth Playbook. Sponsorship revenue, digital products, and paid tier upgrades are all mapped to realistic milestones, not vanity numbers.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the refund policy?</h4>
+                    <p>30-day no-questions-asked refund. If the system doesn't work for you, email steve@bevoza.com within 30 days and you'll get a full refund. No hoops, no hassle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Your Newsletter Won't Build Itself. This System Will.</h2>
+            <p>Six frameworks. 90 days. Zero to monetized — with a plan, not a prayer.</p>
+            <button class="hero-btn" onclick="checkout('bev-newsletter-launch')">Get the Newsletter Launch System — $24</button>
+            <br>
+            <span class="guarantee-badge">✅ 30-Day Money-Back Guarantee</span>
+            <span class="stripe-badge">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/" style="color:#6b7280; text-decoration:none;">← Back to Bevoza</a> &nbsp;·&nbsp; &copy; 2026 Bevoza &middot; Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product) {
+            const btn = event.target;
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            try {
+                const res = await fetch(CHECKOUT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = origText;
+                }
+            } catch (e) {
+                alert('Connection error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        }
+    </script>
+</body>
+</html>
