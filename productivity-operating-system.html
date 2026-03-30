@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Productivity Operating System — Bevoza">
+  <meta property="og:description" content="The system that runs your day so you don't have to. Weekly planning, time-blocking, priority matrix, and energy management for solopreneurs who are drowning in tasks.">
+  <meta property="og:url" content="https://bevoza.com/productivity-operating-system">
+  <meta property="og:image" content="https://bevoza.com/images/og-default.png">
+  <meta property="og:site_name" content="Bevoza">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Productivity Operating System — Bevoza">
+  <meta name="twitter:description" content="The system that runs your day so you don't have to. Weekly planning, time-blocking, priority matrix, and energy management for solopreneurs who are drowning in tasks.">
+  <meta name="twitter:image" content="https://bevoza.com/images/og-default.png">
+
+    <title>Productivity Operating System — The System That Runs Your Day So You Don't Have To | Bevoza</title>
+    <meta name="description" content="Stop letting your inbox run your life. The Productivity Operating System gives solopreneurs a complete weekly planning system — time-blocking, priority matrix, habit tracker, energy management, and decision journal — all in one template. $19 one-time.">
+    <link rel="canonical" href="https://bevoza.com/productivity-operating-system">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+    <style>
+        /* Product page specific styles */
+        .product-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 60px;
+            background: radial-gradient(ellipse at top, #1a2744 0%, #0a0a0a 60%);
+        }
+        .product-hero .hero-badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.4);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #a3a3a3;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        .hero-price-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 18px 56px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+        }
+        .hero-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.45);
+        }
+        .hero-btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+        .social-proof-bar {
+            background: #141414;
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .social-proof-bar span {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Pain Points */
+        .pain-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .pain-section .section-label {
+            text-align: center;
+            color: #ef4444;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .pain-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pain-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-left: 3px solid #ef4444;
+            border-radius: 10px;
+            padding: 28px;
+        }
+        .pain-card .pain-icon {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .pain-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pain-card p {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .features-section .features-sub {
+            text-align: center;
+            color: #a3a3a3;
+            margin-bottom: 56px;
+            font-size: 1.05rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .feature-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .feature-text p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Who It's For */
+        .for-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        .for-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .for-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+        .for-card .for-emoji {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .for-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .for-card p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* What You Get */
+        .deliverables-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .deliverables-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .deliverables-list {
+            max-width: 640px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .deliverables-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #262626;
+        }
+        .deliverables-list li:last-child { border-bottom: none; }
+        .del-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .del-text h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .del-text p { color: #a3a3a3; font-size: 0.875rem; }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 0;
+            background: #0a0a0a;
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .pricing-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #141414;
+            border: 1px solid #3b82f6;
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 0 60px rgba(59,130,246,0.12);
+        }
+        .price-was {
+            color: #6b7280;
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        .price-now {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #3b82f6;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .price-period {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        .pricing-includes {
+            text-align: left;
+            margin-bottom: 36px;
+            list-style: none;
+        }
+        .pricing-includes li {
+            padding: 8px 0;
+            color: #d1d5db;
+            font-size: 0.95rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .pricing-includes li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .value-anchor {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 20px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background: #141414;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid #262626;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            background: #0a0a0a;
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #f3f4f6;
+        }
+        .faq-item p {
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: radial-gradient(ellipse at bottom, #1a2744 0%, #0a0a0a 60%);
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-cta p {
+            color: #a3a3a3;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.3);
+            color: #10b981;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-right: 12px;
+        }
+        .stripe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.3);
+            color: #a5b4fc;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card { padding: 36px 24px; }
+            .price-now { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <div style="padding: 16px 0; border-bottom: 1px solid #262626; background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Bevoza</a>
+            <button class="hero-btn" onclick="checkout('bev-productivity-os')" style="padding: 10px 28px; font-size: 0.95rem;">Buy Now — $19</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-badge">⚡ For Solopreneurs & Independent Operators</div>
+            <h1>Your To-Do List Is Running You. It's Time to Flip That.</h1>
+            <p class="subtitle">The Productivity Operating System is a complete daily and weekly planning framework — time-blocking, priority matrix, habit tracker, and energy management — built so solopreneurs can do deep work without drowning in tasks.</p>
+            <div class="hero-price">$19 one-time</div>
+            <div class="hero-price-note">No subscription. Instant delivery. 30-day money-back guarantee.</div>
+            <button class="hero-btn" onclick="checkout('bev-productivity-os')">Get Instant Access — $19</button>
+            <p style="color: #4b5563; font-size: 0.85rem; margin-top: 16px;">🔒 Secure checkout via Stripe</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <span>300+</span> solopreneurs are running their days on this system &nbsp;·&nbsp; ⭐⭐⭐⭐⭐ &nbsp;·&nbsp; <span>30-day</span> money-back guarantee
+    </div>
+
+    <!-- Pain Points -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-label">Sound Familiar?</div>
+            <h2>Busy All Day. Accomplished Nothing That Matters.</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">🌪️</span>
+                    <h3>You end every day exhausted but unsure what you actually moved forward</h3>
+                    <p>Reactive mode. Inbox fires, Slack pings, "quick calls." You worked 10 hours and your highest-leverage project didn't move an inch.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">📝</span>
+                    <h3>You have 47 open tabs, 3 to-do apps, and a Notes app that's given up on you</h3>
+                    <p>The productivity tools keep multiplying. The clarity never comes. What you need isn't another app — it's a system that runs the same way every week, regardless of chaos.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">😴</span>
+                    <h3>You're doing your best thinking at 11pm when you're already empty</h3>
+                    <p>No energy management = burning your highest cognitive hours on email and your worst hours on strategy. The system flips this on purpose.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🔄</span>
+                    <h3>Sunday planning sessions that never survive Monday morning</h3>
+                    <p>You've tried weekly reviews. They collapse by 9:15am Tuesday. The issue isn't your discipline — it's that your system isn't built to survive real-world interruptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What's Inside the Productivity OS</h2>
+            <p class="features-sub">7 interconnected templates that work together as one system — not a pile of unrelated tools.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">📅</span>
+                    <div class="feature-text">
+                        <h4>Weekly Planning Template</h4>
+                        <p>Sunday setup ritual, weekly intention-setting, carry-forward task review, and 3-priority identification. Takes 20 minutes. Creates an entire week of clarity.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⏰</span>
+                    <div class="feature-text">
+                        <h4>Time-Blocking System</h4>
+                        <p>Pre-built day templates for deep work, admin, and meeting-heavy days. Protect your best cognitive hours. Never book over your creative work blocks again.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎯</span>
+                    <div class="feature-text">
+                        <h4>Priority Matrix (Eisenhower + Impact)</h4>
+                        <p>Instantly categorize tasks by urgency, importance, and leverage. Stop doing things that feel urgent but don't move the needle. Surface your real $10K/hour work.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✅</span>
+                    <div class="feature-text">
+                        <h4>Habit Tracker & Streak System</h4>
+                        <p>Track up to 10 daily habits with automatic streak counting. Links habits to your quarterly goals so you can see the direct connection between daily behaviors and business outcomes.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <div class="feature-text">
+                        <h4>Energy Management Framework</h4>
+                        <p>Map your personal energy curve. Schedule creative and strategic work during peak hours, admin during low hours. Recover 2–3 hours of productive capacity per day.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤝</span>
+                    <div class="feature-text">
+                        <h4>Meeting Prep Templates</h4>
+                        <p>Pre-meeting context builder, outcome statement, and post-meeting action capture. Every meeting you leave should have a decision and an owner. Now it will.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📔</span>
+                    <div class="feature-text">
+                        <h4>Decision Journal</h4>
+                        <p>Log major decisions with context, alternatives considered, and expected outcomes. Review monthly to spot your decision patterns and correct drift before it compounds.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-text">
+                        <h4>AI Productivity Prompt Pack (10 Prompts)</h4>
+                        <p>Pre-written prompts for weekly review synthesis, prioritization help, energy audit, and decision analysis with ChatGPT. Work smarter with an AI thought partner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="for-section">
+        <div class="container">
+            <h2>This Was Built For You If...</h2>
+            <div class="for-grid">
+                <div class="for-card">
+                    <span class="for-emoji">🧑‍💻</span>
+                    <h3>The Overwhelmed Solopreneur</h3>
+                    <p>You're running a business solo — no EA, no COO, no one to catch things that fall. You need a system that functions like an operating system for your brain, not another to-do list.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🔨</span>
+                    <h3>The Freelancer Juggling Too Much</h3>
+                    <p>Client work, prospecting, admin, personal projects, continuing education. Everything feels equally urgent. The priority matrix alone is worth the price — it will immediately clarify what gets your attention.</p>
+                </div>
+                <div class="for-card">
+                    <span class="for-emoji">🎯</span>
+                    <h3>The Founder Scaling to a Team</h3>
+                    <p>You're transitioning from doing everything to delegating. Your personal operating system needs to evolve to support strategic thinking, not just task execution. This builds that foundation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables-section">
+        <div class="container">
+            <h2>Everything You Get for $19</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <span class="del-icon">📅</span>
+                    <div class="del-text">
+                        <h4>Productivity OS Master Template (Google Sheets)</h4>
+                        <p>8-tab system: Weekly Planner, Time Blocker, Priority Matrix, Habit Tracker, Energy Map, Meeting Prep, Decision Journal, and Dashboard.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🤖</span>
+                    <div class="del-text">
+                        <h4>AI Productivity Prompt Pack (PDF)</h4>
+                        <p>10 plug-and-play ChatGPT prompts for weekly review, prioritization, energy audit, and decision analysis.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">📖</span>
+                    <div class="del-text">
+                        <h4>Quick-Start Setup Guide</h4>
+                        <p>How to configure the system for your specific work style in under 30 minutes. Includes sample week walkthroughs for different entrepreneur types.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🎥</span>
+                    <div class="del-text">
+                        <h4>Video Walkthrough</h4>
+                        <p>15-minute screen recording covering every template, how they connect, and the weekly ritual that ties it all together.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="del-icon">🔄</span>
+                    <div class="del-text">
+                        <h4>Free Lifetime Updates</h4>
+                        <p>The system evolves as we learn what works. You get every new template and improvement at no charge.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>One-Time Investment. Every Week, Forever.</h2>
+            <div class="pricing-card">
+                <div class="price-was">Value: 10+ hours of recovered weekly productivity</div>
+                <div class="price-now">$19</div>
+                <div class="price-period">one-time payment · instant delivery</div>
+                <ul class="pricing-includes">
+                    <li>Productivity OS Master Template (8 tabs)</li>
+                    <li>Weekly Planning System</li>
+                    <li>Time-Blocking Templates</li>
+                    <li>Priority Matrix (Eisenhower + Impact)</li>
+                    <li>Habit Tracker with Streak Counter</li>
+                    <li>Energy Management Framework</li>
+                    <li>Meeting Prep + Decision Journal</li>
+                    <li>AI Productivity Prompt Pack (10 prompts)</li>
+                    <li>Free lifetime updates</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <button class="hero-btn" onclick="checkout('bev-productivity-os')" style="width:100%;">Get Instant Access — $19</button>
+                <div class="value-anchor">💡 At $19, this pays for itself the first week you stop spending your mornings figuring out what to work on.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>How long does it take to set up?</h4>
+                    <p>About 30 minutes to configure it for your situation, guided by the Quick-Start Setup Guide. Most people are running their first full week on the system within an hour of purchase. After that, the weekly ritual takes 20–30 minutes every Sunday.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>I've tried productivity systems before and they always fall apart. What's different here?</h4>
+                    <p>Most systems fail because they're too rigid or too complex. This one is built around a simple weekly rhythm — the same 20-minute ritual every Sunday. The templates connect to each other so you don't need willpower to maintain it. It's designed to survive a chaotic Tuesday.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Does this work if my schedule changes week to week?</h4>
+                    <p>Yes. The time-blocking system has three pre-built day templates (deep work, admin-heavy, meeting-heavy) that you rotate based on what each week looks like. The system adapts to your week — not the other way around.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the refund policy?</h4>
+                    <p>30-day no-questions-asked refund. If the system doesn't work for your work style, email steve@bevoza.com within 30 days for a full refund. No forms, no hassle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Your Calendar Should Reflect Your Priorities. Does It?</h2>
+            <p>One system. 20 minutes a week. Total control over your time and energy.</p>
+            <button class="hero-btn" onclick="checkout('bev-productivity-os')">Get the Productivity Operating System — $19</button>
+            <br>
+            <span class="guarantee-badge">✅ 30-Day Money-Back Guarantee</span>
+            <span class="stripe-badge">🔒 Secure Checkout via Stripe</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/" style="color:#6b7280; text-decoration:none;">← Back to Bevoza</a> &nbsp;·&nbsp; &copy; 2026 Bevoza &middot; Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+        async function checkout(product) {
+            const btn = event.target;
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            try {
+                const res = await fetch(CHECKOUT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = origText;
+                }
+            } catch (e) {
+                alert('Connection error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        }
+    </script>
+</body>
+</html>
