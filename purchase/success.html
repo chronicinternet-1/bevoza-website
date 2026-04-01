@@ -7,23 +7,85 @@
   <meta name="robots" content="noindex">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f0f2f5;color:#111}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f0f2f5;color:#111}
     .card{text-align:center;background:#fff;padding:60px 48px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);max-width:520px;margin:24px}
     .icon{font-size:4rem;margin-bottom:20px}
     h1{font-size:1.8rem;margin-bottom:12px;font-weight:900}
     p{color:#666;margin-bottom:16px;line-height:1.7;font-size:1.02rem}
-    .btn{display:inline-block;background:#6366f1;color:#fff;padding:14px 36px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:12px;transition:transform .2s}
-    .btn:hover{transform:translateY(-2px)}
+    .product-name{color:#111;font-weight:700;font-size:1.1rem}
+    .btn{display:inline-block;background:#6366f1;color:#fff;padding:16px 40px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:12px;transition:transform .2s;font-size:1.05rem}
+    .btn:hover{transform:translateY(-2px);background:#4f46e5}
+    .btn-secondary{background:#e5e7eb;color:#374151;padding:12px 28px;font-size:0.95rem;margin-top:8px}
+    .btn-secondary:hover{background:#d1d5db;transform:translateY(-1px)}
+    .loading{color:#999;font-style:italic}
+    .error{color:#ef4444}
+    .email-note{background:#f0f4ff;border:1px solid #c7d2fe;border-radius:10px;padding:16px 20px;margin-top:20px;font-size:0.92rem;color:#4338ca}
+    .help{font-size:0.85rem;color:#999;margin-top:24px}
+    .help a{color:#6366f1}
   </style>
 </head>
 <body>
   <div class="card">
     <div class="icon">🎉</div>
     <h1>Purchase Successful!</h1>
-    <p>Thank you! Your template is on its way. Check your email for the download link and receipt.</p>
-    <p>You'll receive access within a few minutes. If you don't see it, check your spam folder.</p>
-    <p style="font-size:0.9rem;color:#999;margin-top:24px;">Questions? <a href="mailto:steve@chronicinternet.com" style="color:#6366f1;">steve@chronicinternet.com</a></p>
-    <a href="/" class="btn">Back to Bevoza</a>
+    <div id="content">
+      <p class="loading">Preparing your download...</p>
+    </div>
   </div>
+
+  <script>
+    const API = 'https://stripe-checkout.steve-5cb.workers.dev';
+    
+    async function init() {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+      const el = document.getElementById('content');
+
+      if (!sessionId) {
+        el.innerHTML = `
+          <p>Thank you for your purchase!</p>
+          <p>Check your email for the download link and receipt.</p>
+          <p class="help">Questions? <a href="mailto:steve@chronicinternet.com">steve@chronicinternet.com</a></p>
+          <a href="/" class="btn btn-secondary">Back to Bevoza</a>
+        `;
+        return;
+      }
+
+      try {
+        const resp = await fetch(\`\${API}/verify/\${sessionId}\`);
+        const data = await resp.json();
+
+        if (resp.ok && data.downloadUrl) {
+          el.innerHTML = \`
+            <p class="product-name">\${data.product}</p>
+            <p>Your template is ready! Click below to download.</p>
+            <a href="\${data.downloadUrl}" class="btn">⬇️ Download Now</a>
+            <div class="email-note">
+              📧 We also sent a download link to <strong>\${data.email || 'your email'}</strong>. 
+              Save it — you can re-download anytime within 30 days.
+            </div>
+            <p class="help">Questions? <a href="mailto:steve@chronicinternet.com">steve@chronicinternet.com</a></p>
+            <a href="/" class="btn btn-secondary">Back to Bevoza</a>
+          \`;
+        } else {
+          el.innerHTML = \`
+            <p>Thank you for your purchase!</p>
+            <p>Your download link has been sent to your email. Check your inbox (and spam folder) for the delivery email from Bevoza.</p>
+            <p class="help">Didn't receive it? <a href="mailto:steve@chronicinternet.com">Contact support</a></p>
+            <a href="/" class="btn btn-secondary">Back to Bevoza</a>
+          \`;
+        }
+      } catch (e) {
+        el.innerHTML = \`
+          <p>Thank you for your purchase!</p>
+          <p>Check your email for the download link. If you don't see it within a few minutes, check your spam folder.</p>
+          <p class="help">Need help? <a href="mailto:steve@chronicinternet.com">steve@chronicinternet.com</a></p>
+          <a href="/" class="btn btn-secondary">Back to Bevoza</a>
+        \`;
+      }
+    }
+
+    init();
+  </script>
 </body>
 </html>
