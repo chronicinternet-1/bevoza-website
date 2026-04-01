@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="What's Your Solopreneur Score? — Bevoza">
+    <meta property="og:description" content="Answer 8 questions. Get your score + a personalized toolkit recommendation. Find out if you're a Hustler, Builder, or Operator.">
+    <meta property="og:url" content="https://bevoza.com/quiz.html">
+    <meta property="og:image" content="https://bevoza.com/images/og-card.png">
+    <meta property="og:site_name" content="Bevoza">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What's Your Solopreneur Score? — Bevoza">
+    <meta name="twitter:description" content="Answer 8 questions. Get your score + a personalized toolkit recommendation.">
+    <meta name="twitter:image" content="https://bevoza.com/images/og-card.png">
+
+    <title>What's Your Solopreneur Score? — Bevoza</title>
+    <meta name="description" content="Answer 8 questions. Get your score + a personalized toolkit recommendation from Bevoza.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSPVWT0YFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PSPVWT0YFV');
+    </script>
+
+    <style>
+        /* ── Reset & Base ──────────────────────────────────────── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary:    #0a0a0a;
+            --bg-secondary:  #141414;
+            --bg-card:       #1a1a1a;
+            --accent-blue:   #3b82f6;
+            --accent-blue-h: #2563eb;
+            --accent:        #6366f1;
+            --accent-h:      #4f46e5;
+            --accent-glow:   rgba(99,102,241,0.25);
+            --success:       #10b981;
+            --text-primary:  #ffffff;
+            --text-secondary:#a3a3a3;
+            --border:        #262626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Nav (matches index.html exactly) ─────────────────── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .nav-logo {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links .nav-cta {
+            background: var(--accent-blue);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .nav-links .nav-cta:hover {
+            background: var(--accent-blue-h);
+            color: white;
+            transform: translateY(-1px);
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ── Quiz Hero ─────────────────────────────────────────── */
+        .quiz-hero {
+            text-align: center;
+            padding: 72px 24px 48px;
+        }
+        .quiz-badge {
+            display: inline-block;
+            background: rgba(99,102,241,0.15);
+            border: 1px solid rgba(99,102,241,0.4);
+            color: #a5b4fc;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .quiz-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #fff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .quiz-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* ── Quiz Card ─────────────────────────────────────────── */
+        .quiz-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* Progress */
+        .progress-bar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .progress-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            min-width: 72px;
+        }
+        .progress-track {
+            flex: 1;
+            height: 6px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, #818cf8 100%);
+            border-radius: 100px;
+            transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        /* Question card */
+        .q-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 40px 36px;
+            position: relative;
+            transition: border-color 0.3s;
+        }
+        .q-card:hover { border-color: rgba(99,102,241,0.3); }
+
+        .q-number {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .q-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 28px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+        }
+        .option-btn {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.97rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+        .option-btn:hover {
+            border-color: var(--accent);
+            background: rgba(99,102,241,0.08);
+            transform: translateX(4px);
+        }
+        .option-btn.selected {
+            border-color: var(--accent);
+            background: rgba(99,102,241,0.15);
+            color: #c7d2fe;
+        }
+        .option-btn.selected .opt-marker {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        .opt-marker {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        /* Next button */
+        .q-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 28px;
+        }
+        .next-btn {
+            padding: 14px 36px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .next-btn.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .next-btn.active:hover {
+            background: var(--accent-h);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px var(--accent-glow);
+        }
+
+        /* ── Transitions ───────────────────────────────────────── */
+        .quiz-stage {
+            animation: fadeSlideIn 0.4s ease forwards;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Score Reveal ──────────────────────────────────────── */
+        .score-section {
+            text-align: center;
+            padding: 0 0 40px;
+        }
+        .score-circle-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent) 0%, var(--accent) var(--pct), #262626 var(--pct));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: popIn 0.6s cubic-bezier(0.175,0.885,0.32,1.275) both;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            width: 126px;
+            height: 126px;
+            border-radius: 50%;
+            background: var(--bg-card);
+        }
+        .score-num {
+            position: relative;
+            z-index: 1;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+        .score-denom {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .result-tier-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .tier-hustler  { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #fbbf24; }
+        .tier-builder  { background: rgba(59,130,246,0.15);  border: 1px solid rgba(59,130,246,0.4);  color: #60a5fa; }
+        .tier-operator { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.4); color: #a5b4fc; }
+
+        .result-title {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .result-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* Share line */
+        .share-line {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .share-score-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            margin-bottom: 36px;
+        }
+        .share-score-btn:hover { opacity: 0.85; }
+
+        /* Email capture in results */
+        .email-cta-box {
+            background: linear-gradient(135deg, #1a1230 0%, var(--bg-card) 100%);
+            border: 1px solid rgba(99,102,241,0.35);
+            border-radius: 14px;
+            padding: 36px 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .email-cta-box h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .email-cta-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .email-row {
+            display: flex;
+            gap: 10px;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+        .email-field {
+            flex: 1;
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.97rem;
+            transition: border-color 0.2s;
+        }
+        .email-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+        }
+        .email-submit-btn {
+            padding: 14px 24px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.97rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px var(--accent-glow);
+        }
+        .email-submit-btn:hover {
+            background: var(--accent-h);
+            transform: translateY(-1px);
+        }
+        .email-msg {
+            font-size: 0.85rem;
+            min-height: 20px;
+            margin-top: 10px;
+        }
+        .email-msg.success { color: var(--success); }
+        .email-msg.error   { color: #ef4444; }
+
+        /* ── Recommendations ───────────────────────────────────── */
+        .recs-section {
+            display: none;
+            animation: fadeSlideIn 0.4s ease forwards;
+        }
+        .recs-section.visible { display: block; }
+
+        .recs-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .recs-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+
+        .rec-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .rec-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            transition: border-color 0.2s, transform 0.2s;
+            animation: fadeSlideIn 0.4s ease forwards;
+        }
+        .rec-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .rec-info { flex: 1; min-width: 200px; }
+        .rec-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .rec-why {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .rec-price-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .rec-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .rec-buy-btn {
+            padding: 10px 22px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 3px 12px var(--accent-glow);
+            white-space: nowrap;
+        }
+        .rec-buy-btn:hover {
+            background: var(--accent-h);
+            transform: translateY(-1px);
+        }
+        .rec-buy-btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+
+        .retake-link {
+            display: block;
+            text-align: center;
+            margin-top: 36px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .retake-link:hover { color: var(--text-primary); }
+
+        /* ── Footer (matches index.html exactly) ──────────────── */
+        .footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+            margin-top: 60px;
+        }
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+        .footer-logo {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { color: #4b5563; font-size: 0.8rem; }
+
+        /* ── Responsive ────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0; right: 0;
+                background: rgba(10,10,10,0.98);
+                border-bottom: 1px solid var(--border);
+                padding: 16px 24px 24px;
+                gap: 16px;
+            }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+
+            .q-card { padding: 28px 20px 24px; }
+            .email-row { flex-direction: column; }
+            .rec-card { gap: 14px; }
+            .rec-price-btn { align-items: flex-start; }
+        }
+        @media (max-width: 480px) {
+            .quiz-hero { padding: 48px 0 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">Bevoza</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/#products" class="nav-cta">Browse Products</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="quiz-hero">
+        <div class="container">
+            <div class="quiz-badge">✦ Free Score Quiz</div>
+            <h1 class="quiz-title">What's Your Solopreneur Score?</h1>
+            <p class="quiz-subtitle">Answer 8 questions. Get your score + a personalized toolkit recommendation.</p>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+    <div class="quiz-wrap">
+
+        <!-- Progress bar -->
+        <div class="progress-bar-wrap" id="progress-bar-wrap">
+            <span class="progress-label" id="progress-label">Question 1 of 8</span>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill" style="width: 12.5%"></div>
+            </div>
+        </div>
+
+        <!-- Question stage -->
+        <div id="quiz-stage" class="quiz-stage"></div>
+
+        <!-- Score / Results stage (hidden until done) -->
+        <div id="results-stage" style="display:none;"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="/" class="footer-logo">Bevoza</a>
+            <ul class="footer-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Chronic Internet LLC &middot; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+    // ── Nav toggle ──────────────────────────────────────────────────────────
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    // ── Checkout (same pattern as index.html) ───────────────────────────────
+    const CHECKOUT_API = 'https://stripe-checkout.steve-5cb.workers.dev/checkout';
+
+    async function checkout(product, btn) {
+        const origText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Redirecting…';
+        try {
+            const res = await fetch(CHECKOUT_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product }),
+            });
+            const data = await res.json();
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                alert('Something went wrong. Please try again.');
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        } catch (e) {
+            alert('Connection error. Please try again.');
+            btn.disabled = false;
+            btn.textContent = origText;
+        }
+    }
+
+    // ── Quiz data ───────────────────────────────────────────────────────────
+    const QUESTIONS = [
+        {
+            text: "How do you track your business finances?",
+            options: [
+                "Spreadsheet I built myself",
+                "A mix of apps and manual tracking",
+                "Professional tools with automated reports"
+            ]
+        },
+        {
+            text: "How often do you create content for your business?",
+            options: [
+                "Rarely — when inspiration strikes",
+                "Weekly, but inconsistently",
+                "I have a system that runs like clockwork"
+            ]
+        },
+        {
+            text: "When a client asks for your rate, you…",
+            options: [
+                "Panic and quote something random",
+                "Have a range but negotiate every time",
+                "Know my numbers cold — rate, margins, and floor"
+            ]
+        },
+        {
+            text: "How do you find new clients or customers?",
+            options: [
+                "Word of mouth and hope",
+                "Some outreach, some inbound, no real system",
+                "Predictable pipeline with multiple channels"
+            ]
+        },
+        {
+            text: "What's your relationship with AI tools?",
+            options: [
+                "I've tried ChatGPT a few times",
+                "I use AI regularly but feel like I'm scratching the surface",
+                "AI is embedded in my daily workflow"
+            ]
+        },
+        {
+            text: "How do you plan your week?",
+            options: [
+                "I react to whatever comes up",
+                "I have a rough plan but get derailed often",
+                "Time-blocked calendar with priorities locked in"
+            ]
+        },
+        {
+            text: "If your biggest client disappeared tomorrow, you'd…",
+            options: [
+                "Be in serious trouble",
+                "Survive but feel the pain for months",
+                "Have enough pipeline and diversification to absorb it"
+            ]
+        },
+        {
+            text: "How do you measure if your business is growing?",
+            options: [
+                "Gut feeling and bank balance",
+                "I check metrics occasionally",
+                "Dashboard with KPIs I review weekly"
+            ]
+        }
+    ];
+
+    const RESULTS = {
+        hustler: {
+            range: "8–12",
+            tier: "The Hustler",
+            tierClass: "tier-hustler",
+            emoji: "🔥",
+            desc: "You're grinding hard — but flying blind. The energy is there; now it's time to build the systems that let your work compound instead of reset every week.",
+            products: [
+                {
+                    name: "Solopreneur Financial Command Center",
+                    why: "Stop guessing your numbers. Know your revenue, runway, and margins — so you can make decisions with confidence.",
+                    price: "$29",
+                    id: "bev-financial-center"
+                },
+                {
+                    name: "Productivity Operating System",
+                    why: "Replace reactive chaos with a weekly system that puts your highest-leverage work first — every single week.",
+                    price: "$19",
+                    id: "bev-productivity-os"
+                }
+            ]
+        },
+        builder: {
+            range: "13–17",
+            tier: "The Builder",
+            tierClass: "tier-builder",
+            emoji: "⚡",
+            desc: "You've got real momentum and solid instincts. The gap between you and the next level isn't effort — it's the right systems turning your inconsistent wins into a repeatable engine.",
+            products: [
+                {
+                    name: "Content Multiplication System",
+                    why: "Turn your sporadic content into a machine. One idea becomes 20 pieces of content across every channel.",
+                    price: "$19",
+                    id: "bev-content-system"
+                },
+                {
+                    name: "Freelancer Client Pipeline Tracker",
+                    why: "Kill the feast-or-famine cycle. Manage leads, proposals, and follow-ups so no deal ever slips through the cracks.",
+                    price: "$19",
+                    id: "bev-freelancer-pipeline"
+                },
+                {
+                    name: "AI Prompt Engineering Vault",
+                    why: "200+ battle-tested prompts for marketing, sales, and ops. Stop using AI at 10% — unlock the other 90%.",
+                    price: "$14",
+                    id: "bev-prompt-vault"
+                }
+            ]
+        },
+        operator: {
+            range: "18–24",
+            tier: "The Operator",
+            tierClass: "tier-operator",
+            emoji: "🏆",
+            desc: "You're running a real business — not just hustling for clients. You think in systems, measure what matters, and you're building something that can scale. These tools will sharpen your edge.",
+            products: [
+                {
+                    name: "SaaS Metrics & KPI Tracker",
+                    why: "Track MRR, churn, LTV, CAC, and 20+ metrics automatically. Investor-grade dashboards without enterprise pricing.",
+                    price: "$29",
+                    id: "bev-saas-metrics"
+                },
+                {
+                    name: "Personal Brand Strategy Kit",
+                    why: "Define your positioning, voice, and 90-day visibility roadmap. The moat that no competitor can copy.",
+                    price: "$19",
+                    id: "bev-brand-kit"
+                },
+                {
+                    name: "Weekly CEO Dashboard",
+                    why: "Run your weekly review like a CEO. OKR tracking, decision log, and team pulse — the operating cadence of a real business.",
+                    price: "$19",
+                    id: "bev-ceo-dashboard"
+                }
+            ]
+        }
+    };
+
+    // ── State ────────────────────────────────────────────────────────────────
+    let currentQ = 0;
+    let answers  = [];   // scores 1–3 for each question
+    let selectedOption = null;
+
+    // ── Render question ──────────────────────────────────────────────────────
+    function renderQuestion(idx) {
+        selectedOption = null;
+        const q = QUESTIONS[idx];
+        const stage = document.getElementById('quiz-stage');
+
+        // Update progress
+        const pct = ((idx + 1) / QUESTIONS.length) * 100;
+        document.getElementById('progress-fill').style.width = pct + '%';
+        document.getElementById('progress-label').textContent = `Question ${idx + 1} of ${QUESTIONS.length}`;
+
+        const html = `
+            <div class="q-card">
+                <div class="q-number">Question ${idx + 1}</div>
+                <div class="q-text">${q.text}</div>
+                <ul class="options-list" id="options-list">
+                    ${q.options.map((opt, i) => `
+                        <li>
+                            <button class="option-btn" data-score="${i + 1}" onclick="selectOption(this)">
+                                <span class="opt-marker">${String.fromCharCode(65 + i)}</span>
+                                ${opt}
+                            </button>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+            <div class="q-nav">
+                <button class="next-btn" id="next-btn" onclick="nextQuestion()">
+                    ${idx < QUESTIONS.length - 1 ? 'Next Question →' : 'See My Score →'}
+                </button>
+            </div>
+        `;
+
+        stage.innerHTML = html;
+        // Re-trigger animation
+        stage.classList.remove('quiz-stage');
+        void stage.offsetWidth; // reflow
+        stage.classList.add('quiz-stage');
+    }
+
+    function selectOption(btn) {
+        // Deselect all
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedOption = parseInt(btn.dataset.score);
+        document.getElementById('next-btn').classList.add('active');
+    }
+
+    function nextQuestion() {
+        if (selectedOption === null) return;
+        answers.push(selectedOption);
+
+        if (currentQ < QUESTIONS.length - 1) {
+            currentQ++;
+            renderQuestion(currentQ);
+        } else {
+            showResults();
+        }
+    }
+
+    // ── Show results ─────────────────────────────────────────────────────────
+    function showResults() {
+        const total = answers.reduce((a, b) => a + b, 0);
+        let result;
+        if      (total <= 12) result = RESULTS.hustler;
+        else if (total <= 17) result = RESULTS.builder;
+        else                  result = RESULTS.operator;
+
+        // Hide quiz
+        document.getElementById('quiz-stage').style.display = 'none';
+        document.getElementById('progress-bar-wrap').style.display = 'none';
+
+        // Update OG description dynamically for share
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', `I scored ${total}/24 on the Solopreneur Score quiz. I'm "${result.tier}". Find out your score!`);
+
+        const pct = Math.round(((total - 8) / 16) * 100);
+        const conic = pct + '%';
+
+        const stage = document.getElementById('results-stage');
+        stage.style.display = 'block';
+        stage.innerHTML = `
+            <div class="score-section quiz-stage">
+                <div class="score-circle-wrap">
+                    <div class="score-circle" style="--pct: ${conic}">
+                        <div class="score-num">
+                            ${total}
+                            <div class="score-denom">/ 24</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-tier-badge ${result.tierClass}">${result.emoji} ${result.tier}</div>
+                <h2 class="result-title">You're "${result.tier}"</h2>
+                <p class="result-desc">${result.desc}</p>
+
+                <p class="share-line">Share your result 👇</p>
+                <a class="share-score-btn"
+                   href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`I scored ${total}/24 on the Solopreneur Score quiz — I'm "${result.tier}". Find out yours 👇 https://bevoza.com/quiz.html`)}"
+                   target="_blank" rel="noopener">
+                    🐦 Share on X
+                </a>
+
+                <!-- Email capture -->
+                <div class="email-cta-box">
+                    <h3>Get your personalized action plan + 3 free AI prompts</h3>
+                    <p>We'll send your full ${result.tier} playbook straight to your inbox — free.</p>
+                    <div class="email-row">
+                        <input type="email" id="result-email" class="email-field" placeholder="Enter your email" autocomplete="email">
+                        <button class="email-submit-btn" onclick="submitEmail(${total}, '${result.tier}')">Send My Plan</button>
+                    </div>
+                    <div class="email-msg" id="email-msg"></div>
+                </div>
+
+                <!-- Recommendations (shown after email) -->
+                <div class="recs-section" id="recs-section">
+                    <h3 class="recs-title">Your Recommended Toolkit</h3>
+                    <p class="recs-subtitle">Hand-picked for ${result.tier}s. Buy once, own forever.</p>
+                    <div class="rec-cards">
+                        ${result.products.map((p, i) => `
+                            <div class="rec-card" style="animation-delay: ${i * 0.1}s">
+                                <div class="rec-info">
+                                    <div class="rec-name">${p.name}</div>
+                                    <div class="rec-why">${p.why}</div>
+                                </div>
+                                <div class="rec-price-btn">
+                                    <div class="rec-price">${p.price}</div>
+                                    <button class="rec-buy-btn" onclick="checkout('${p.id}', this)">
+                                        Buy Now
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a class="retake-link" onclick="retakeQuiz()">↩ Retake the quiz</a>
+                </div>
+            </div>
+        `;
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'quiz_complete', {
+                score: total,
+                tier: result.tier
+            });
+        }
+    }
+
+    // ── Email submit ─────────────────────────────────────────────────────────
+    function submitEmail(score, tier) {
+        const input = document.getElementById('result-email');
+        const msg   = document.getElementById('email-msg');
+        const email = input.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            msg.textContent = 'Please enter a valid email address.';
+            msg.className = 'email-msg error';
+            return;
+        }
+
+        // Store to localStorage (same pattern as script.js)
+        const subscribers = JSON.parse(localStorage.getItem('bevoza-subscribers') || '[]');
+        if (!subscribers.includes(email)) {
+            subscribers.push(email);
+            localStorage.setItem('bevoza-subscribers', JSON.stringify(subscribers));
+        }
+
+        // Also store quiz result alongside
+        const quizLeads = JSON.parse(localStorage.getItem('bevoza-quiz-leads') || '[]');
+        quizLeads.push({ email, score, tier, date: new Date().toISOString() });
+        localStorage.setItem('bevoza-quiz-leads', JSON.stringify(quizLeads));
+
+        console.log('Quiz lead:', { email, score, tier });
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'quiz_email_submit', { score, tier });
+        }
+
+        msg.textContent = '🎉 Check your inbox! Your plan is on its way.';
+        msg.className = 'email-msg success';
+        input.disabled = true;
+        document.querySelector('.email-submit-btn').disabled = true;
+
+        // Reveal recommendations
+        setTimeout(() => {
+            const recs = document.getElementById('recs-section');
+            recs.classList.add('visible');
+            recs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 600);
+    }
+
+    // ── Retake ───────────────────────────────────────────────────────────────
+    function retakeQuiz() {
+        currentQ     = 0;
+        answers      = [];
+        selectedOption = null;
+
+        document.getElementById('results-stage').style.display = 'none';
+        document.getElementById('quiz-stage').style.display    = 'block';
+        document.getElementById('progress-bar-wrap').style.display = 'flex';
+
+        renderQuestion(0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── Boot ─────────────────────────────────────────────────────────────────
+    renderQuestion(0);
+    </script>
+</body>
+</html>
