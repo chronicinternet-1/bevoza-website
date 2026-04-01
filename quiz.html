@@ -1062,12 +1062,21 @@
 
         console.log('Quiz lead:', { email, score, tier });
 
+        // Send to backend for Brevo + welcome email
+        try {
+            fetch('https://stripe-checkout.steve-5cb.workers.dev/quiz-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, score, tier }),
+            });
+        } catch (e) { console.log('Lead capture error:', e); }
+
         // Analytics
         if (typeof gtag !== 'undefined') {
             gtag('event', 'quiz_email_submit', { score, tier });
         }
 
-        msg.textContent = '🎉 Check your inbox! Your plan is on its way.';
+        msg.textContent = '🎉 Check your inbox! Your action plan + 3 free AI prompts are on the way.';
         msg.className = 'email-msg success';
         input.disabled = true;
         document.querySelector('.email-submit-btn').disabled = true;
